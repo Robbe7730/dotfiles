@@ -69,10 +69,10 @@ function adbNet() {
 }
 
 # easily go to the current semester folder
-export huidigSemester="/home/robbe/Documents/2018-2019/semester1/"
+export huidigSemester="$HOME/Documents/2018-2019/semester1/"
 
 # set PATHs
-export PATH=$HOME/.local/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/.rbenv/bin:/usr/bin/python2:$PATH:/home/robbe/.i3/scripts:/home/robbe/Documents/chromium/depot_tools
+export PATH=$HOME/.local/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/.rbenv/bin:/usr/bin/python2:$PATH:$HOME/.i3/scripts
 export PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 # visual
@@ -80,16 +80,16 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 # random but cool
-alias hexclock='chromium --app="file:///home/robbe/Documents/Hex clock.html"'
 alias rainbows='yes ███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| lolcat'
 alias cammiechat="curl 'https://kelder.zeus.ugent.be/messages/' -H 'Content-Type: text/plain' --compressed --data-binary "
-alias ree="img2txt /home/robbe/Pictures/reeeeeee.gif -W 64 -d none"
+alias ree="img2txt $HOME/Pictures/reeeeeee.gif -W 64 -d none"
 alias rienhorn="bash <(curl -s https://i.rxn.be/keyhorn.png)"
 alias cammie='curl http://kelder.zeus.ugent.be/webcam/video/mjpg.cgi | mpv --no-correct-pts --fps 5 -'
 # alias npm="yarn"
 alias suod="sl"
 alias vind="find"
 alias shrug="echo \"¯\_(ツ)_/¯\""
+alias pparrot="terminal-parrot --delay 50"
 
 # java-related
 alias junit="java org.junit.runner.JUnitCore"
@@ -110,7 +110,7 @@ alias helios="ssh rovherck@helios.ugent.be"
 alias webssh="ssh rovherck@webssh.ugent.be"
 alias connectUgent="sudo vpnc ugent.conf"
 alias disconnectUgent="sudo vpnc-disconnect"
-alias vimrc="vim ~/.bashrc"
+alias vimrc="vim $HOME/.bashrc"
 alias fix="pacaur -S"
 alias gtfo="pacaur -R"
 alias pong="ping https://www.ugent.be"
@@ -119,13 +119,15 @@ alias gc="git commit -S -m "
 alias copy="xclip -selection clipboard"
 alias findfile="sudo find / | dmenu"
 alias copygpg="gpg --armor --export robbevanherck1@gmail.com | copy"
-alias copyssh="cat /home/robbe/.ssh/id_rsa.pub | copy"
+alias copyssh="cat $HOME/.ssh/id_rsa.pub | copy"
 alias cdhs="cd $huidigSemester"
 alias capsstate="xset -q | grep \"Caps Lock\" | sed \"s/^.*Caps Lock: *\([onf]*\) .*$/\1/\""
 alias untar="tar -xvf"
 alias keldermuziek="ncmpcpp -h 10.0.0.5"
 alias free="free --giga -h"
 alias pptToPdf="unoconv -f pdf"
+alias kelderforward="pax11publish -e -S 10.0.0.5"
+alias kelderbackward="pax11publish -e -S \"\""
 
 # Bluetooth
 alias bluetoothon="echo power on | bluetoothctl"
@@ -137,7 +139,7 @@ alias connectheadphones="echo connect D0:8A:55:9C:3D:DC | bluetoothctl"
 alias runghc="stack runghc"
 
 # JUnit-setup
-JUNIT_HOME="/home/robbe/Documents/Java/JUnit/junit4.10/"
+JUNIT_HOME="$HOME/Documents/Java/JUnit/junit4.10/"
 export CLASSPATH=$CLASSPATH:$JUNIT_HOME/junit.jar
 
 # Prompt String
@@ -161,9 +163,9 @@ export EDITOR="vim"
 eval $(thefuck --alias)
 eval "$(rbenv init -)"
 
-PATH="/home/robbe/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/robbe/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/robbe/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/robbe/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/robbe/perl5"; export PERL_MM_OPT;
+PATH="$HOME/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 export LD_LIBRARY_PATH=/usr/local/bin/openssl
