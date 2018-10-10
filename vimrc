@@ -16,3 +16,5 @@ Plugin 'makerj/vim-pdf'
 
 call vundle#end()
 filetype plugin indent on
+
+syntax on
