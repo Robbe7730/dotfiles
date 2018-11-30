@@ -88,7 +88,7 @@ alias grep='grep --color=auto'
 
 # random but cool
 alias rainbows='yes ███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| lolcat'
-alias cammiechat="curl 'https://kelder.zeus.ugent.be/messages/' -H 'Content-Type: text/plain' --compressed --data-binary "
+alias cammiechat="curl 'https://kelder.zeus.ugent.be/messages/' -H 'X-Username: Robbe' -H 'Content-Type: text/plain' --compressed --data-binary "
 alias ree="img2txt $HOME/Pictures/reeeeeee.gif -W 64 -d none"
 alias rienhorn="bash <(curl -s https://i.rxn.be/keyhorn.png)"
 alias cammie='curl http://kelder.zeus.ugent.be/webcam/video/mjpg.cgi | mpv --no-correct-pts --fps 5 -'
