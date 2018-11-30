@@ -69,7 +69,7 @@ function adbNet() {
 	if [ "$1" == "" ]
 	then
 		echo "Please enter a valid ip address"
-		exit 1
+		return 1
 	fi
 	adb tcpip 5555
 	adb connect $1:5555
