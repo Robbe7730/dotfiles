@@ -1,0 +1,4 @@
+number=$(( RANDOM % 12 ))
+# echo $number
+paplay /home/robbe/.i3/sounds/memebigboy/$number.ogg
+

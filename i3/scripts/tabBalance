@@ -1,0 +1,47 @@
+#!/bin/env python3
+
+import configparser
+import requests
+import sys
+from urllib.parse import quote
+from optparse import OptionParser
+
+schulden_str = "BETAAL U FUCKING SCHULDEN"
+
+config = configparser.ConfigParser()
+
+config.read("/home/robbe/.i3/secrets.ini")
+
+# user = {
+#         "name": "TEST",
+#         "balance": -512
+#        }
+
+parser = OptionParser()
+parser.add_option("-b", "--balance", action="store_true", dest="balance_only", help="Only print balance")
+parser.add_option("-s", "--schulden", action="store", dest="schulden_treshold", help=f"Prints \"{schulden_str}\" if the user has less money than the argument")
+parser.add_option("-u", "--user", action="store", dest="username", help="Select other user than the default user")
+(options, args) = parser.parse_args()
+
+if options.username:
+    username = options.username
+    if username not in config["TabTokens"]:
+        sys.stderr.write(f"Token for user {username} was not found.\n")
+        sys.exit(3)
+else:
+    username = config["Zeus"]["default_username"]
+
+try:
+    r = requests.get("https://tab.zeus.gent/users/" + username, headers={'Authorization': 'Token token=' + config["TabTokens"][username], "Accept": "application/json"})
+except:
+    sys.stderr.write("An error occured, please check your internet connection.\n")
+    sys.exit(2)
+user = r.json()
+
+if options.balance_only:
+    print(user['balance'])
+elif options.schulden_treshold != None:
+    if user['balance'] < float(options.schulden_treshold)*100:
+        print(schulden_str)
+else:
+    print(f"{user['name']} has a balance of {user['balance']/100} euro")

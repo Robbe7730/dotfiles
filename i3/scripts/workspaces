@@ -1,0 +1,14 @@
+#!/bin/bash
+
+workspace=`cat /home/robbe/.i3/workspaces | grep -v "^#" | cut -d \; -f 1 | grep -v "^$" | dmenu`
+[ "$workspace" = "" ] && exit 0
+
+workspacePath=`cat /home/robbe/.i3/workspaces | grep "^$workspace;" | cut -d \; -f 2`
+
+[ "$workspacePath" = "" ] && workspacePath="$workspace"
+
+process=`cat /home/robbe/.i3/workspaces_processes | cut -d ";" -f 1 | dmenu`
+
+toExec=`cat /home/robbe/.i3/workspaces_processes | grep "^$process;" | cut -d ";" -f 2 | sed "s|{}|$workspacePath|g"`
+
+eval "$toExec"

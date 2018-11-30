@@ -1,0 +1,6 @@
+#!/bin/bash
+
+selectedEmoji=`emoji -l | dmenu`
+unicode=`emoji -g "$selectedEmoji"`
+
+xdotool type "$unicode"

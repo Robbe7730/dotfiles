@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+
+import sys
+from optparse import OptionParser
+from emoji_codes import EMOJI_CODES
+
+parser = OptionParser()
+parser.add_option("-l", "--list", action="store_true", dest="list", help="List all available emoji's")
+parser.add_option("-g", "--get-emoji", action="store", dest="emoji_code", help="Get the unicode emoji")
+(options, args) = parser.parse_args()
+
+if options.list:
+    for (k, v) in EMOJI_CODES.items():
+        print(k)
+elif options.emoji_code:
+    if options.emoji_code in EMOJI_CODES:
+        sys.stdout.write(EMOJI_CODES[options.emoji_code])
+    else:
+        sys.stderr.write(f"Unknown emoji {options.emoji_code}")
+        sys.exit(2)
+else:
+    sys.stderr.write("Please specify an action")
+    sys.exit(1)

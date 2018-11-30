@@ -1,0 +1,74 @@
+#!/bin/bash
+
+function setTime() {
+	echo $1 > ~/.lastupdate
+}
+
+log=true
+
+if [ ! -f ~/.lastupdate ]
+then
+	echo 0 > ~/.lastupdate
+fi
+
+while getopts ":qns:b:" flag; do
+	case $flag in
+	b)
+		lastUpdate=`cat ~/.lastupdate`
+		currentTime=`date +%s`
+		delta=$(($currentTime - $lastUpdate))
+		if [ "$delta" -ge "$OPTARG" ]
+		then
+			echo "Don't forget to update"
+		fi
+		exit 0
+	;;
+	s)
+		if [ "$OPTARG" = "now" ]
+		then
+			setTime `date +%s`
+		else
+			setTime $OPTARG
+		fi
+		exit 0
+	;;
+	q)
+		lastUpdate=`cat ~/.lastupdate`
+		currentTime=`date +%s`
+		delta=$(($currentTime - $lastUpdate))
+		days=`echo $delta/86400 | bc`
+		hours=`echo $delta/3600 % 24 | bc`
+		minutes=`echo $delta/60 % 60 | bc`
+		seconds=`echo $delta % 60 | bc`
+		echo Last update was $days days, $hours hours, $minutes minutes and $seconds seconds ago.
+		exit 0
+	;;
+	n)
+		log=false
+	;;
+	\?)
+		echo "Syntax: update [-qn] [-s (time/\"now\")] [-b time]" >&2
+		echo "Arguments:"
+		echo "    q: Get time since last update"
+		echo "    s: Set last update to (time) or the current time if \"now\" is given"
+		echo "    n: Update, but don't set timestamp"
+		echo "    b: Print \"Don't forget to update\" if update was longer than (time) seconds ago and exits (used in .bashrc)"
+		exit 2
+	;;
+	:)
+		echo "Option -$OPTARG requires an argument, use -? for a list of arguments" >&2
+		exit 1
+	esac
+done
+
+time pacaur -Syu
+
+exitStatus=$?
+
+echo Exit status: $exitStatus
+
+if [ $exitStatus = 0 ] && [ $log = true ]
+then
+	echo "Writing"
+	setTime `date +%s`
+fi

@@ -1,0 +1,88 @@
+#!/bin/env python3
+
+# https://api.spacexdata.com/v2/launches/upcoming
+
+import requests
+import datetime
+import sys
+
+def get_reused_info(data):
+   fsReused = 0
+   for core in data["rocket"]["first_stage"]["cores"]:
+        if(core["reused"]):
+            fsReused += 1
+
+   reused_data = "no reused parts"
+   if fsReused == 1:
+        reused_data = "a reused first stage"
+   elif fsReused > 1:
+        reused_data = f"{fsReused} reused first stage-parts"
+   return reused_data
+
+part_name = {
+    "core": "core",
+    "side_core1": "first side core",
+    "side_core2": "second side core",
+    "fairings": "fairings",
+    "capsule": "capsule"
+}
+
+def get_reuse_attempts(data):
+    ret = []
+    reuse = data["reuse"]
+    for key, value in reuse.items():
+        if value:
+            part = part_name[key]
+            ret.append(f"the {part}")
+    return list_to_string(ret, "nothing")
+
+def get_launch_date(data):
+    ret = f"{datetime.datetime.fromtimestamp(data['launch_date_unix']):%A %d %b %Y}"
+    return ret
+
+def get_launch_time(data):
+    ret = f"{datetime.datetime.fromtimestamp(data['launch_date_unix']):%H:%M:%S}"
+    return ret
+
+orbits = {
+    "LEO": "low earth orbit",
+    "PO": "polar orbit",
+    "ISS": "the ISS",
+    "polar": "polar orbit",
+    "GTO": "geostationary transfer orbit",
+    "SSO": "sun-synchronous orbit"
+}
+
+def get_orbit(key):
+    if(key in orbits):
+        return orbits[key]
+    return key
+
+def get_payload_info(data):
+    for payload in data["rocket"]["second_stage"]["payloads"]:
+        weight = payload['payload_mass_kg']
+        weightstr = f"{weight} kg " if weight else ""
+        yield f"{payload['payload_id']}: a {weightstr}{payload['payload_type']} from {list_to_string(payload['customers'], 'an unkown customer')} to {get_orbit(payload['orbit'])}"
+
+def list_to_string(lis, default):
+    if len(lis) == 1:
+        return lis[0]
+    elif len(lis) > 0:
+        return " and ".join([", ".join(lis[:-1]), lis[-1]])
+    return default
+try:
+    request = requests.get(url='https://api.spacexdata.com/v2/launches/upcoming')
+except:
+    print("An error occured, please check your internet connection")
+    sys.exit(2)
+
+data = request.json()[0]
+
+print(f"The next flight is a {data['rocket']['rocket_name']} flight with {get_reused_info(data)}.")
+print(f"This flight, {get_reuse_attempts(data)} will be recovered.")
+print(f"Launch scheduled on: {get_launch_date(data)} at {get_launch_time(data)}")
+print(f"Payload:")
+for payloadtxt in get_payload_info(data):
+    print(f" - {payloadtxt}")
+if(data["links"]["video_link"]):
+    print(f"Watch the video here: {data['links']['video_link']}")

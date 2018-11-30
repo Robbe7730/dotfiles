@@ -1,0 +1,10 @@
+#!/bin/bash
+
+url="$*"
+
+echo "Fetching available formats for $url..."
+youtube-dl -F "$url"
+read -p "Please enter the desired quality code: " FORMAT
+
+echo "Streaming with quality $FORMAT..."
+mpv --cache=1024 $(youtube-dl -f $FORMAT -g "$url")

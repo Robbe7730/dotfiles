@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+
+import sys
+from optparse import OptionParser
+
+parser = OptionParser()
+parser.add_option("--add", help="Add a todo", action="store")
+parser.add_option("--done", help="Mark todo as done", action="store")
+parser.add_option("--list-done", help="List all todos marked as done", action="store_true")
+parser.add_option("--list", help="List all todos (default)", action="store_true")
+
+options, args = parser.parse_args()
+
+num_flags = sum([1 if x else 0 for x in [options.add, options.done, options.list]])
+
+if num_flags > 1:
+    sys.stderr.write("Error: more than one option selected\n")
+    sys.stderr.flush()
+    sys.exit(1) 
+
+if options.add:
+    print("TODO: add")
+elif options.done:
+    print("TODO: done")
+elif options.list_done:
+    print("TODO: list_done")
+else:
+    print(f"TODO: list")

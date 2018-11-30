@@ -1,0 +1,13 @@
+#!/bin/bash
+
+drive=`lsblk -io KNAME | tail -n +2 | dmenu | sed "s/^/\/dev\//"`
+
+[[ "$drive" == "" ]] && exit 0
+
+folder=`find /mnt -maxdepth 1 -mindepth 1 -type d | sed "s/^\/mnt\///g" | dmenu | sed "s/^/\/mnt\//"`
+
+[[ "$folder" == "" ]] && exit 0
+
+response=`sudo mount $drive $folder 2>&1`
+
+[[ "$response" != "" ]] && notify-send "$response"

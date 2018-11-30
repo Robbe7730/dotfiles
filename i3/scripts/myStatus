@@ -1,0 +1,46 @@
+#!/bin/bash
+
+i3status | while :
+do
+	read line
+
+	title=`playerctl metadata title | tr -d /\\&\" `
+	artist=`playerctl metadata artist | tr -d /\\&\" `
+	freeRam=`awk '/MemTotal/ {memtotal=$2}; /MemAvailable/ {memavail=$2}; END { printf("%.0f", (100- (memavail / memtotal * 100))) }' /proc/meminfo`
+	brightness=`xbacklight | sed "s/^\(.*\)\..*$/\1/"`
+	tabBalance="`tabBalance -b`"
+	exitCode=$?
+	formatted="`echo \"scale=2; $tabBalance/100\" | bc -l`"
+	
+	if [[ $exitCode != 0 ]]
+	then
+		tabBalance=":("
+		tabColor="#FF0000"
+	elif [[ "$tabBalance" -le 0 ]]
+	then
+		tabBalance="€ $formatted BETAAL UW FUCKING SCHULDEN"
+		tabColor="#FF0000"
+	elif [[ "$tabBalance" -le 140 ]]
+	then
+		tabBalance="€ $formatted"
+		tabColor="#FF8C00"
+	else
+		tabBalance="€ $formatted"
+		tabColor="#00FF00"
+	fi
+
+	out=`echo "$line" | sed "s/]/,{\"full_text\":\"RAM: $freeRam%\"},{\"full_text\":\"🔅 $brightness%\"}, {\"color\": \"$tabColor\", \"full_text\":\"$tabBalance\"}]/"`
+	
+	# FUCK FUCKING PIECE OF SHIT SHITPLAY
+	if [[ "`echo $artist | tr A-Z a-z `" == *"coldplay"* ]]
+	then
+		notify-send "Saved your life (again)"
+		playerctl next
+	fi
+
+	if [ "$title" != "" ]
+	then
+		out=`echo $out | sed "s/^\([,]*\)\[{/\1[{\"full_text\":\"$title - $artist\"},{/"`
+	fi
+	echo $out
+done

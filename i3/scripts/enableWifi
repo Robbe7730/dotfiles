@@ -1,0 +1,8 @@
+#!/bin/bash
+
+sudo systemctl enable wpa_supplicant@wlp3s0
+sudo systemctl enable dhcpcd@wlp3s0
+
+sudo systemctl start wpa_supplicant@wlp3s0
+sudo systemctl start dhcpcd@wlp3s0
+

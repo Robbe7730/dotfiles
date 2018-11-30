@@ -1,0 +1,10 @@
+#!/bin/env python3
+
+print("Vertel...")
+
+bericht = "WEODEND EN BOOS EN NIET KALM AAAAAAAAAAAAAh"
+
+while bericht != "":
+	bericht = input(">")
+	print("Komt goed")
+

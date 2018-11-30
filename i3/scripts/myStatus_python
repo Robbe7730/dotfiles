@@ -1,0 +1,91 @@
+#!/usr/bin/python3
+
+# Imports
+import gi
+gi.require_version('Playerctl', '1.0')
+from gi.repository import Playerctl
+import json
+import subprocess
+import sys
+import signal
+import os
+
+# Functions
+def on_track_change(player):
+    track_info = '{} - {}'.format(player.get_title(), player.get_artist())
+
+def signalHandler(a, b):
+    sys.stderr.write("UPDATING...")
+    update()
+    sys.stderr.flush()
+
+def getRamInfo():
+    with open('/proc/meminfo', 'r') as mem:
+        ret = {}
+        tmp = 0
+        for i in mem:
+            sline = i.split()
+            if str(sline[0]) == 'MemTotal:':
+                ret['total'] = int(sline[1])
+            elif str(sline[0]) in ('MemFree:', 'Buffers:', 'Cached:'):
+                tmp += int(sline[1])
+        ret['free'] = tmp
+        ret['used'] = int(ret['total']) - int(ret['free'])
+    return ret
+
+def executeProcess(processList):
+    proc = subprocess.run(processList, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    return str(proc.stdout, "utf-8")
+
+def sendUSR1(p):
+    p.send_signal(10)
+
+def update():
+    sendUSR1(process)
+
+# Variables
+parsed = []
+track_info = ""
+
+# Event Handlers
+signal.signal(signal.SIGUSR1,signalHandler);
+
+# Hardcoded i3 output
+sys.stdout.write('{ "version":1 }\n')
+sys.stdout.write('[\n')
+sys.stdout.flush()
+
+process = subprocess.Popen("i3status", stdout=subprocess.PIPE, bufsize=1)
+for line in iter(process.stdout.readline, ''):
+    linestring = str(line,'utf-8')
+    if linestring[0] == ",":
+        noComma = linestring[1:]
+        parsed = json.loads(noComma)
+
+        # Reload Bar
+        # FNULL = open(os.devnull, 'w')
+        # process = subprocess.Popen("reloadBar", stdout=FNULL)
+
+        # RAM usage
+        ramInfo = getRamInfo()
+        parsed.append({ "full_text": "RAM: {0:.0f}%".format(ramInfo['used']/ramInfo['total']*100) })
+
+        # Brightness
+        brightness = executeProcess(["xbacklight"])
+        parsed.append({ "full_text": "🔅 {0:.0f}%".format(float(brightness)) })
+
+        # Song info
+        try:
+            player = Playerctl.Player()
+            player.on('metadata', on_track_change)
+            on_track_change(player)
+            isPlaying = True
+        except Exception as e:
+            sys.stderr.write(str(e))
+            isPlaying = False
+        if track_info != "":
+            parsed.insert(0, { "full_text": "{}".format(track_info)})
+
+        sys.stdout.write(json.dumps(parsed) + ",")
+        sys.stdout.flush()
+        sys.stderr.flush()

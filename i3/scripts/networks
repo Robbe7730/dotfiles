@@ -1,0 +1,24 @@
+#!/bin/env python3
+
+from collections import defaultdict
+
+with open("/etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf", "r") as file:
+    lines = [x.strip() for x in file.readlines()]
+
+i = 0
+
+networks = []
+
+while i < len(lines):
+    network = defaultdict(str)
+    if lines[i].startswith("network"):
+        while lines[i] != "}":
+            i += 1
+            lineSplit = lines[i].split("=")
+            if(len(lineSplit) == 2 and lineSplit[0][0] != "#"):
+                key, value= lineSplit[0], lineSplit[1]
+                network[key] = value
+        networks.append(network)
+    i += 1
+
+print("\n".join([network["ssid"] + ("(disabled)" if network["disabled"] == "1" else "") for network in networks]))
