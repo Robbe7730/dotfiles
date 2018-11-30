@@ -29,9 +29,9 @@ function mdtopdf() {
 	second="$2"
 	if [ "$second" == "" ]
 	then
-		second=`echo $1 | sed "s/^\(.*\).[^.]*$/\1.pdf/"`
+		second=`echo $1 | sed "s/^\(.*\)\.md$/\1.pdf/"`
 	fi
-	pandoc "$1" --pdf-engine=xelatex -o "$second"
+	pandoc "$1" --pdf-engine=xelatex -V "geometry:margin=1in" -V "papersize:a4" -o "$second"
 }
 
 # transform markdown into html
