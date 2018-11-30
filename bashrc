@@ -166,7 +166,10 @@ tabBalance -s 1.40 2>/dev/null &
 export GPG_TTY=$(tty)
 
 # Why use nano?
-export EDITOR="vim"
+export EDITOR="nvim"
+
+# Why use vim?
+alias vim="nvim"
 
 eval $(thefuck --alias)
 eval "$(rbenv init -)"
