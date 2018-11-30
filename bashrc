@@ -97,6 +97,7 @@ alias suod="sl"
 alias vind="find"
 alias shrug="echo \"¯\_(ツ)_/¯\""
 alias pparrot="terminal-parrot --delay 50"
+alias probleem="echo Vertel...; while [ 1 -eq 1 ]; do read; echo Zoek het zelf uit; done"
 
 # java-related
 alias junit="java org.junit.runner.JUnitCore"
