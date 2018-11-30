@@ -141,8 +141,7 @@ alias kelderbackward="pax11publish -e -S \"\""
 # Bluetooth
 alias bluetoothon="echo power on | bluetoothctl"
 alias bluetoothoff="echo power off | bluetoothctl"
-alias bluetoothcycle="echo power off | bluetoothctl; echo power on | bluetoothctl"
-alias connectheadphones="echo connect D0:8A:55:9C:3D:DC | bluetoothctl"
+alias connectheadphones="echo connect D0:8A:55:33:74:F6 | bluetoothctl"
 
 # Haskell
 alias runghc="stack runghc"
