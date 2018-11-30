@@ -5,6 +5,13 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# add submodule to nvim
+function addnvimmodule() {
+        pushd /home/robbe/.config/nvim/bundle
+        git submodule add $1
+        popd
+}
+
 # run a Flask app
 function runFlask() {
 	export FLASK_APP="$1"
