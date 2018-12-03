@@ -175,14 +175,14 @@ bar {
 ####### USER DEFINED #######
 
 # emoji dmenu
-bindsym $mod+Shift+b exec /home/robbe/.i3/scripts/emojiHelper
+bindsym $mod+Shift+b exec /home/robbe/.files/i3/scripts/emojiHelper
 
 # (u)mount dmenu
-bindsym $mod+Shift+m exec /home/robbe/.i3/scripts/mountHelper
-bindsym $mod+Shift+u exec /home/robbe/.i3/scripts/umountHelper
+bindsym $mod+Shift+m exec /home/robbe/.files/i3/scripts/mountHelper
+bindsym $mod+Shift+u exec /home/robbe/.files/i3/scripts/umountHelper
 
 # workspaces dmenu
-bindsym $mod+Shift+a exec /home/robbe/.i3/scripts/workspaces
+bindsym $mod+Shift+a exec /home/robbe/.files/i3/scripts/workspaces
 
 # favourites dmenu
 bindsym $mod+Shift+d exec cat ~/.i3/favourites | dmenu | bash - &
@@ -201,45 +201,44 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # volume management
-bindsym XF86AudioRaiseVolume exec /home/robbe/.i3/scripts/volumeUp
-bindsym XF86AudioLowerVolume exec /home/robbe/.i3/scripts/volumeDown
-bindsym XF86AudioMute exec /home/robbe/.i3/scripts/volumeMute
+bindsym XF86AudioRaiseVolume exec /home/robbe/.files/i3/scripts/volumeUp
+bindsym XF86AudioLowerVolume exec /home/robbe/.files/i3/scripts/volumeDown
+bindsym XF86AudioMute exec /home/robbe/.files/i3/scripts/volumeMute
 
 # brightness management 
-bindsym XF86MonBrightnessUp exec /home/robbe/.i3/scripts/brightnessUp
-bindsym XF86MonBrightnessDown exec /home/robbe/.i3/scripts/brightnessDown
+bindsym XF86MonBrightnessUp exec /home/robbe/.files/i3/scripts/brightnessUp
+bindsym XF86MonBrightnessDown exec /home/robbe/.files/i3/scripts/brightnessDown
 
 # soundboard mode ;)
 bindsym $mod+o mode "Soundboard"
 mode "Soundboard" {
-	bindsym a exec paplay /home/robbe/.i3/sounds/shutdown.ogg
-	bindsym z exec paplay /home/robbe/.i3/sounds/momsspaghetti.ogg
-	bindsym e exec paplay /home/robbe/.i3/sounds/manamejeff.ogg
-	bindsym r exec paplay /home/robbe/.i3/sounds/airhorn.ogg
-	bindsym t exec paplay /home/robbe/.i3/sounds/xfiles.ogg
-	bindsym y exec paplay /home/robbe/.i3/sounds/doot.ogg
-	bindsym u exec paplay /home/robbe/.i3/sounds/bing.ogg
-	bindsym i exec paplay /home/robbe/.i3/sounds/bong.ogg
-	bindsym o exec /home/robbe/.i3/scripts/memebigboy
-	bindsym p exec paplay /home/robbe/.i3/sounds/wauw.ogg
+	bindsym a exec paplay /home/robbe/.files/i3/sounds/shutdown.ogg
+	bindsym z exec paplay /home/robbe/.files/i3/sounds/momsspaghetti.ogg
+	bindsym e exec paplay /home/robbe/.files/i3/sounds/manamejeff.ogg
+	bindsym r exec paplay /home/robbe/.files/i3/sounds/airhorn.ogg
+	bindsym t exec paplay /home/robbe/.files/i3/sounds/xfiles.ogg
+	bindsym y exec paplay /home/robbe/.files/i3/sounds/doot.ogg
+	bindsym u exec paplay /home/robbe/.files/i3/sounds/bing.ogg
+	bindsym i exec paplay /home/robbe/.files/i3/sounds/bong.ogg
+	bindsym o exec /home/robbe/.files/i3/scripts/memebigboy
+	bindsym p exec paplay /home/robbe/.files/i3/sounds/wauw.ogg
 	bindsym twosuperior exec killall paplay
 	
-	bindsym q exec paplay /home/robbe/.i3/sounds/thethinggoes.ogg
-	bindsym s exec paplay /home/robbe/.i3/sounds/skrraa.ogg
-	bindsym d exec paplay /home/robbe/.i3/sounds/sadviolin.ogg
-	bindsym f exec paplay /home/robbe/.i3/sounds/congratulations.ogg
-	bindsym g exec paplay /home/robbe/.i3/sounds/curbyour.ogg
-	bindsym h exec paplay /home/robbe/.i3/sounds/itsfreerealestate.ogg
-	bindsym j exec paplay /home/robbe/.i3/sounds/reeee.ogg
-	bindsym k exec paplay /home/robbe/.i3/sounds/alert.ogg
-	bindsym l exec paplay /home/robbe/.i3/sounds/bass.ogg
-		
+	bindsym q exec paplay /home/robbe/.files/i3/sounds/thethinggoes.ogg
+	bindsym s exec paplay /home/robbe/.files/i3/sounds/skrraa.ogg
+	bindsym d exec paplay /home/robbe/.files/i3/sounds/sadviolin.ogg
+	bindsym f exec paplay /home/robbe/.files/i3/sounds/congratulations.ogg
+	bindsym g exec paplay /home/robbe/.files/i3/sounds/curbyour.ogg
+	bindsym h exec paplay /home/robbe/.files/i3/sounds/itsfreerealestate.ogg
+	bindsym j exec paplay /home/robbe/.files/i3/sounds/reeee.ogg
+	bindsym k exec paplay /home/robbe/.files/i3/sounds/alert.ogg
+	bindsym l exec paplay /home/robbe/.files/i3/sounds/bass.ogg
 
-	bindsym w exec paplay /home/robbe/.i3/sounds/heythatsprettygood.ogg
-	bindsym x exec paplay /home/robbe/.i3/sounds/ihavecripplingdepression.ogg
-	bindsym c exec paplay /home/robbe/.i3/sounds/ihaveosteoporosis.ogg
-	bindsym v exec paplay /home/robbe/.i3/sounds/imgay.ogg
-        bindsym b exec paplay /home/robbe/.i3/sounds/itstimetostop.ogg
+	bindsym w exec paplay /home/robbe/.files/i3/sounds/heythatsprettygood.ogg
+	bindsym x exec paplay /home/robbe/.files/i3/sounds/ihavecripplingdepression.ogg
+	bindsym c exec paplay /home/robbe/.files/i3/sounds/ihaveosteoporosis.ogg
+	bindsym v exec paplay /home/robbe/.files/i3/sounds/imgay.ogg
+        bindsym b exec paplay /home/robbe/.files/i3/sounds/itstimetostop.ogg
 
 	bindsym Escape mode "default"
 }
