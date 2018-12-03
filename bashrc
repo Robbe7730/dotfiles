@@ -79,7 +79,7 @@ function adbNet() {
 export huidigSemester="$HOME/Documents/2018-2019/semester1/"
 
 # set PATHs
-export PATH=$HOME/.local/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/.rbenv/bin:/usr/bin/python2:$PATH:$HOME/.i3/scripts
+export PATH=$HOME/.local/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/.rbenv/bin:/usr/bin/python2:$PATH:$HOME/.files/i3/scripts
 export PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 # visual
@@ -157,7 +157,10 @@ PS1='[\u@\h \W]\$ '
 update -b 432000
 
 # Check if I have enough money on Tab (>= €1.40)
-tabBalance -s 1.40 2>/dev/null &
+tabBalance -s 1.40 2>&1 1>/dev/null &
+
+# THIS IS SO SAD
+curl -s 'https://sad.zeus.gent' 2>&1 > /dev/null &
 
 # Add autocomplete to pandoc
 . <(pandoc --bash-completion)
