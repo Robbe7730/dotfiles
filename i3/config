@@ -233,12 +233,14 @@ mode "Soundboard" {
 	bindsym j exec paplay /home/robbe/.files/i3/sounds/reeee.ogg
 	bindsym k exec paplay /home/robbe/.files/i3/sounds/alert.ogg
 	bindsym l exec paplay /home/robbe/.files/i3/sounds/bass.ogg
+	bindsym m exec paplay /home/robbe/.files/i3/sounds/vsaucemusic.ogg
 
 	bindsym w exec paplay /home/robbe/.files/i3/sounds/heythatsprettygood.ogg
 	bindsym x exec paplay /home/robbe/.files/i3/sounds/ihavecripplingdepression.ogg
 	bindsym c exec paplay /home/robbe/.files/i3/sounds/ihaveosteoporosis.ogg
 	bindsym v exec paplay /home/robbe/.files/i3/sounds/imgay.ogg
         bindsym b exec paplay /home/robbe/.files/i3/sounds/itstimetostop.ogg
+        bindsym n exec paplay /home/robbe/.files/i3/sounds/heyvsaucemichaelhere.ogg
 
 	bindsym Escape mode "default"
 }
