@@ -242,5 +242,9 @@ mode "Soundboard" {
         bindsym b exec paplay /home/robbe/.files/i3/sounds/itstimetostop.ogg
         bindsym n exec paplay /home/robbe/.files/i3/sounds/heyvsaucemichaelhere.ogg
 
+        bindsym comma exec paplay /home/robbe/.files/i3/sounds/oooooooooooooo.ogg
+        bindsym semicolon exec paplay /home/robbe/.files/i3/sounds/theyaskyouhowyouare.ogg
+        bindsym colon exec paplay /home/robbe/.files/i3/sounds/thuglife.ogg
+
 	bindsym Escape mode "default"
 }
