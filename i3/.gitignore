@@ -2,3 +2,4 @@ secrets*
 MOZAIC
 default
 scripts/__pycache__/
+.git_BAK/
