@@ -198,3 +198,5 @@ export WINEDLLOVERRIDES="OpenAl32=n"
 # Automatically use more jobs
 export MAKEFLAGS="-j4"
 
+# Fix npm/NodeJS
+export NODE_PATH=/usr/lib/node_modules/
