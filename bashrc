@@ -139,6 +139,7 @@ alias kelderforward="pax11publish -e -S 10.0.0.5"
 alias kelderbackward="pax11publish -e -S \"\""
 alias cdaoc="cd /home/robbe/Documents/Haskell/AdventOfCode2018/AdventOfCode/src/"
 alias readme="pandoc -f gfm -t plain -s README.md | less"
+alias stubru="mpv https://live-radio.lwc.vrtcdn.be/groupc/live/f404f0f3-3917-40fd-80b6-a152761072fe/live.isml/.m3u8"
 
 # Bluetooth
 alias bluetoothon="echo power on | bluetoothctl"
