@@ -1,0 +1,10 @@
+#!/bin/bash
+
+rswx_text="`/home/robbe/.files/i3/scripts/rswx_helper`"
+
+selection=`echo "$rswx_text" | cut -d \; -f 1 | grep -v "^$" | dmenu`
+[ "$selection" = "" ] && exit 0
+
+url=`echo "$rswx_text" | grep "^$selection;" | cut -d ";" -f 2`
+
+mpv "$url"

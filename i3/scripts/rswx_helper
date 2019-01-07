@@ -1,0 +1,42 @@
+#!/usr/bin/env node
+
+const https = require("http");
+const Parser = require('html-dom-parser');
+const builder = require("terminal-menu-program"),
+      program = new builder.Program("Radio Soulwax")
+
+const url = "http://2manydjs.com/index-radiosoulwax.html"
+
+https.get(url, res => {
+  res.setEncoding("utf8");
+  let body = "";
+  res.on("data", data => {
+    body += data;
+  });
+  res.on("end", () => {
+    parseResult(body);
+  });
+});
+
+function parseResult(response) {
+    const doc = new Parser(response);
+    const html = (doc.filter((x) => x.name == "html")[0])
+    const body = (html.children.filter((x) => x.name == "body")[0])
+    const divContainer = (body.children.filter((x) => x.name == "div" && x.attribs.id == "container")[0])
+    const center = (divContainer.children.filter((x) => x.name == "center")[1])
+    const divSleeves = (center.children.filter((x) => x.name == "div" && x.attribs["class"] == "sleeves")[0])
+    const divsSleevecontainer = divSleeves.children.filter((x) => x.name == "div" && x.attribs["class"] == "sleevecontainer")
+    let dict = {}
+    divsSleevecontainer.forEach(sleeve => {
+        const a = sleeve.children.filter((x) => x.name == "a" && x.attribs["class"] == "popup")[0];
+        const divText = sleeve.children.filter((x) => x.name == "div" && x.attribs["class"] == "text")[0];
+        dict[divText.children[0].data] = a.attribs["href"]
+    });
+    showScreen(dict);
+}
+
+function showScreen(dict) {
+    Object.keys(dict).forEach((x) => {
+        console.log(x + ";" + dict[x]);
+    });
+}
