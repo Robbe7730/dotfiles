@@ -137,6 +137,7 @@ alias free="free --giga -h"
 alias pptToPdf="unoconv -f pdf"
 alias kelderforward="pax11publish -e -S 10.0.0.5"
 alias kelderbackward="pax11publish -e -S \"\""
+alias cdaoc="cd /home/robbe/Documents/Haskell/AdventOfCode2018/AdventOfCode/src/"
 
 # Bluetooth
 alias bluetoothon="echo power on | bluetoothctl"
