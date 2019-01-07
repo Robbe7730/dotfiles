@@ -188,7 +188,7 @@ bindsym $mod+Shift+a exec /home/robbe/.files/i3/scripts/workspaces
 bindsym $mod+Shift+d exec cat ~/.i3/favourites | dmenu | bash - &
 
 # background image
-exec --no-startup-id feh --bg-scale /home/robbe/Pictures/background.png
+exec --no-startup-id feh --bg-scale /home/robbe/Pictures/background.jpg
 
 # lockscreen
 exec --no-startup-id light-locker
