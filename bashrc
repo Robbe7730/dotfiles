@@ -160,10 +160,10 @@ PS1='[\u@\h \W]\$ '
 update -b 432000
 
 # Check if I have enough money on Tab (>= €1.40)
-tabBalance -s 1.40 2>&1 1>/dev/null &
+tabBalance -s 1.40 &> /dev/null &
 
 # THIS IS SO SAD
-curl -s 'https://sad.zeus.gent' 2>&1 > /dev/null &
+curl -s 'https://sad.zeus.gent' &> /dev/null &
 
 # Add autocomplete to pandoc
 . <(pandoc --bash-completion)
