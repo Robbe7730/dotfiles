@@ -174,6 +174,9 @@ bar {
 
 ####### USER DEFINED #######
 
+# sticky mode
+bindsym $mod+Shift+s sticky toggle
+
 # emoji dmenu
 bindsym $mod+Shift+b exec /home/robbe/.files/i3/scripts/emojiHelper
 
