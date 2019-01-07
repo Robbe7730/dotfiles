@@ -195,6 +195,6 @@ export LSAN_OPTIONS="suppressions=lsan.supp print_suppressions=0"
 # For Trackmania
 export WINEDLLOVERRIDES="OpenAl32=n"
 
-# Automatically use more cores
-export MAKEFLAGS="-j"
+# Automatically use more jobs
+export MAKEFLAGS="-j4"
 
