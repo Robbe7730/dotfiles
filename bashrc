@@ -162,9 +162,6 @@ update -b 432000
 # Check if I have enough money on Tab (>= €1.40)
 tabBalance -s 1.40 &> /dev/null &
 
-# THIS IS SO SAD
-curl -s 'https://sad.zeus.gent' &> /dev/null &
-
 # Add autocomplete to pandoc
 . <(pandoc --bash-completion)
 
