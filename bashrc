@@ -159,9 +159,6 @@ PS1='[\u@\h \W]\$ '
 # Check if the system needs to be updated (current: 5 days)
 update -b 432000
 
-# Check if I have enough money on Tab (>= €1.40)
-tabBalance -s 1.40 &> /dev/null &
-
 # Add autocomplete to pandoc
 . <(pandoc --bash-completion)
 
