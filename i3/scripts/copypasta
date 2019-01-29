@@ -1,0 +1,5 @@
+#!/bin/bash
+
+selection="`ls -1 $HOME/.i3/copypasta | dmenu`"
+
+cat "$HOME/.i3/copypasta/$selection" | xclip -selection clipboard
