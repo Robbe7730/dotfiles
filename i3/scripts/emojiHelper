@@ -1,6 +1,7 @@
 #!/bin/bash
 
-selectedEmoji=`emoji -l | dmenu`
-unicode=`emoji -g "$selectedEmoji"`
+selectedEmoji="`emoji -l | dmenu`"
+unicode="`emoji -g \"$selectedEmoji\"`"
+unicode_symbol="`echo -e \"$unicode\"`"
 
-xdotool type "$unicode"
+xdotool type "$unicode_symbol"

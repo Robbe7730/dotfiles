@@ -2,7 +2,13 @@
 
 import sys
 from optparse import OptionParser
-from emoji_codes import EMOJI_CODES
+
+EMOJI_CODES = {}
+
+with open("/home/robbe/.i3/scripts/Values.txt", "r") as f:
+    for line in f.readlines():
+        uc, desc = line.strip().split(",")
+        EMOJI_CODES[desc.lower()] = uc
 
 parser = OptionParser()
 parser.add_option("-l", "--list", action="store_true", dest="list", help="List all available emoji's")
