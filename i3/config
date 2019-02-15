@@ -254,6 +254,9 @@ mode "Soundboard" {
         bindsym comma exec paplay /home/robbe/.files/i3/sounds/oooooooooooooo.ogg
         bindsym semicolon exec paplay /home/robbe/.files/i3/sounds/theyaskyouhowyouare.ogg
         bindsym colon exec paplay /home/robbe/.files/i3/sounds/thuglife.ogg
+        bindsym equal exec paplay /home/robbe/.files/i3/sounds/wegotem.ogg
+        bindsym ugrave exec paplay /home/robbe/.files/i3/sounds/evilmorty.ogg
+        bindsym mu exec paplay /home/robbe/.files/i3/sounds/hmmmwhatyousay.ogg
 
 	bindsym Escape mode "default"
 }
