@@ -9,6 +9,7 @@
 function addnvimmodule() {
         pushd /home/robbe/.config/nvim/bundle
         git submodule add $1
+        vim status.md
         popd
 }
 
