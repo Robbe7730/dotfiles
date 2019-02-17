@@ -197,3 +197,13 @@ export MAKEFLAGS="-j4"
 
 # Fix npm/NodeJS
 export NODE_PATH=/usr/lib/node_modules/
+# Matter-moist
+export ANDROID_HOME=/opt/android-sdk
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/tools/bin:$PATH
+export MOBILE_DIR=$HOME/Documents/Random/Mattermoist/mattermost-mobile
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
+export WEBAPP_DIR=/home/robbe/go/src/github.com/mattermost/mattermost-webapp/
