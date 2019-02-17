@@ -142,7 +142,6 @@ alias cdaoc="cd /home/robbe/Documents/Haskell/AdventOfCode2018/AdventOfCode/src/
 alias readme="pandoc -f gfm -t plain -s README.md | less"
 alias stubru="mpv https://live-radio.lwc.vrtcdn.be/groupc/live/f404f0f3-3917-40fd-80b6-a152761072fe/live.isml/.m3u8"
 alias gpp="g++"
-alias windhoos="rclone sync /mnt/windows/ Stack:Windhoos -L -v"
 
 # Bluetooth
 alias bluetoothon="echo power on | bluetoothctl"
