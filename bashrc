@@ -197,6 +197,9 @@ export MAKEFLAGS="-j4"
 
 # Fix npm/NodeJS
 export NODE_PATH=/usr/lib/node_modules/
+
+export LFS=/mnt/lfs
+
 # Matter-moist
 export ANDROID_HOME=/opt/android-sdk
 export PATH=$ANDROID_HOME/platform-tools:$PATH
