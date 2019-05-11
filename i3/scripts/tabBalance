@@ -8,6 +8,10 @@ from optparse import OptionParser
 
 schulden_str = "BETAAL U FUCKING SCHULDEN"
 
+def debug(text):
+    if options.debug:
+        sys.stderr.write(f"[d] {text} \n")
+
 config = configparser.ConfigParser()
 
 config.read("/home/robbe/.i3/secrets.ini")
@@ -21,27 +25,36 @@ parser = OptionParser()
 parser.add_option("-b", "--balance", action="store_true", dest="balance_only", help="Only print balance")
 parser.add_option("-s", "--schulden", action="store", dest="schulden_treshold", help=f"Prints \"{schulden_str}\" if the user has less money than the argument")
 parser.add_option("-u", "--user", action="store", dest="username", help="Select other user than the default user")
+parser.add_option("-d", "--debug", action="store_true", dest="debug", help="Show debug info")
 (options, args) = parser.parse_args()
 
 if options.username:
+    debug(f"Setting username to {options.username}")
     username = options.username
+    debug(f"Checking if {username} is in config")
     if username not in config["TabTokens"]:
         sys.stderr.write(f"Token for user {username} was not found.\n")
         sys.exit(3)
 else:
     username = config["Zeus"]["default_username"]
+    debug(f"Using default username: {username}")
 
 try:
+    debug("Sending request")
     r = requests.get("https://tab.zeus.gent/users/" + username, headers={'Authorization': 'Token token=' + config["TabTokens"][username], "Accept": "application/json"})
 except:
     sys.stderr.write("An error occured, please check your internet connection.\n")
     sys.exit(2)
 user = r.json()
+debug(f"Got response {user}")
 
 if options.balance_only:
+    debug(f"Printing balance only")
     print(user['balance'])
 elif options.schulden_treshold != None:
+    debug(f"Testing for debts")
     if user['balance'] < float(options.schulden_treshold)*100:
+        debug(f"{user['balance']} < {float(options.schulden_treshold)*100}")
         print(schulden_str)
 else:
     print(f"{user['name']} has a balance of {user['balance']/100} euro")
