@@ -1,0 +1,35 @@
+#!/bin/bash
+
+function printDing() {
+    numLines=`wc -l ~/.i3/dingen | sed 's/^\([0-9]*\) .*$/\1/'`
+    lineNum=`echo $RANDOM % $numLines + 1 | bc`
+    line=`tail -n+$lineNum ~/.i3/dingen | head -n 1`
+    echo $line is een ding
+}
+
+if [ -z "$1" ]
+then
+  printDing
+else
+  getopts ":a:lp" flag;
+  case $flag in 
+    a)
+      echo $OPTARG >> ~/.i3/dingen
+      ;;
+    l)
+      cat ~/.i3/dingen
+      ;;
+    p)
+      printDing
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument"
+      ;;
+    \?)
+      echo "Syntax: ding [-a <name> | -l | -p]"
+      echo "Arguments:"
+      echo "    p: (default) prints \"(thing) is een ding\""
+      echo "    a: Add a new thing"
+      echo "    l: List all currently known things"
+  esac
+fi
