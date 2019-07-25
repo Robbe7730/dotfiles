@@ -173,6 +173,10 @@ bar {
 
 ####### USER DEFINED #######
 
+# Password management
+bindsym $mod+Shift+z exec PASSWORD_STORE_DIR=/home/robbe/.zeus-wachtwoord-winkel passmenu
+bindsym $mod+Shift+f exec passmenu
+
 # Copypasta
 bindsym $mod+Shift+p exec /home/robbe/.files/i3/scripts/copypasta
 
