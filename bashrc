@@ -41,6 +41,7 @@ function addnvimmodule() {
 # run a Flask app
 function runFlask() {
 	export FLASK_APP="$1"
+        export FLASK_DEBUG=true
 	flask run
 }
 
