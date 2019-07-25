@@ -182,8 +182,8 @@ alias connectheadphones="echo connect D0:8A:55:33:74:F6 | bluetoothctl"
 alias runghc="stack runghc"
 
 # JUnit-setup
-JUNIT_HOME="$HOME/Documents/Java/JUnit/junit4.10/"
-export CLASSPATH=$CLASSPATH:$JUNIT_HOME/junit.jar
+JUNIT_HOME="$HOME/Documents/Java/JUnit/junit4.10"
+export CLASSPATH=$CLASSPATH:$JUNIT_HOME/junit.jar:$HOME/Documents/Java/gson.jar
 
 # Prompt String
 PS1='[\u@\h \W]\$ '
