@@ -170,6 +170,7 @@ alias pizza="nc localhost 4000"
 alias reboot-lfs="grub-reboot 3 && reboot"
 alias mountEncrypted="sudo cryptsetup luksOpen /dev/sdb encrypted && sudo mount /dev/mapper/encrypted /mnt/gpg-enc"
 alias umountEncrypted="sudo umount /mnt/gpg-enc && sudo cryptsetup luksClose encrypted"
+alias gpg_master="gpg --home=/mnt/gpg-enc/.gnupg"
 
 # Bluetooth
 alias bluetoothon="echo power on | bluetoothctl"
