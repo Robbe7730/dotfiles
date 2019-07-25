@@ -239,3 +239,7 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin
 export WEBAPP_DIR=/home/robbe/go/src/github.com/mattermost/mattermost-webapp/
+
+# Passwordwinkel peeters
+alias zpass='PASSWORD_STORE_DIR=~/.zeus-wachtwoord-winkel pass'
+alias zpassmenu='PASSWORD_STORE_DIR=~/.zeus-wachtwoord-winkel passmenu'
