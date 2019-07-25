@@ -261,6 +261,11 @@ mode "Soundboard" {
         bindsym ugrave exec paplay /home/robbe/.files/i3/sounds/evilmorty.ogg
         bindsym mu exec paplay /home/robbe/.files/i3/sounds/hmmmwhatyousay.ogg
         bindsym dead_circumflex exec paplay /home/robbe/.files/i3/sounds/whyarewestillhere.ogg
+        bindsym dollar exec paplay /home/robbe/.files/i3/sounds/fbiopenup.ogg
+        bindsym less exec paplay /home/robbe/.files/i3/sounds/crabrave.ogg
+
+        bindsym ampersand exec paplay /home/robbe/.files/i3/sounds/wasowasowasowassuuup.ogg
+        bindsym eacute exec paplay /home/robbe/.files/i3/sounds/bitconeeeeect.ogg
 
 	bindsym Escape mode "default"
 }
