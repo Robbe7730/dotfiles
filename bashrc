@@ -137,9 +137,6 @@ alias fixwifi="sudo systemctl restart wpa_supplicant@wlp3s0"
 alias wifistatus="watch systemctl status wpa_supplicant@wlp3s0"
 alias vimwpa="vim /etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf"
 
-# run python2 instead of python3
-alias python="python2"
-
 # shortening of common commands
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias helios="ssh rovherck@helios.ugent.be"
