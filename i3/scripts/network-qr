@@ -1,0 +1,46 @@
+#!/bin/env python3
+
+from collections import defaultdict
+import qrcode
+
+with open("/etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf", "r") as file:
+    lines = [x.strip() for x in file.readlines()]
+
+i = 0
+
+networks = []
+
+while i < len(lines):
+    network = defaultdict(str)
+    if lines[i].startswith("network"):
+        while lines[i] != "}":
+            i += 1
+            lineSplit = lines[i].split("=")
+            if(len(lineSplit) == 2 and lineSplit[0][0] != "#"):
+                key, value= lineSplit[0], lineSplit[1].replace("\"", "")
+                network[key] = value
+        networks.append(network)
+    i += 1
+
+networks = sorted(networks, key=lambda n: n["ssid"])
+
+print("\n".join([str(i) + ": " + network["ssid"] for i, network in enumerate(networks)]))
+
+choice = -1
+
+while choice not in range(0,len(networks)):
+    try:
+        choice = int(input("Select network:"))
+    except:
+        choice = -1
+
+network = networks[choice]
+
+ssid = network["ssid"]
+password = network["psk"]
+enc = "" if network["key_mgmt"] == "NONE" else "WPA"
+hidden = network["scan_ssid"] == "1"
+
+qr = qrcode.QRCode()
+qr.add_data(f"WIFI:S:{ssid};T:{enc};P:{password};" + ("H:true;" if hidden else "") + ";")
+qr.print_ascii(invert=True)
