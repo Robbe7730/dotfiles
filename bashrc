@@ -5,6 +5,15 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Fuzzy find and cd to a directory
+function fzf_dir() {
+  [ $1 = ""] && return
+  file="`locate $1 | fzf`"
+  [ $file = "" ] && return
+  folder="`dirname $file`"
+  cd $folder
+}
+
 # add submodule to nvim
 function addnvimmodule() {
         pushd /home/robbe/.config/nvim/bundle
