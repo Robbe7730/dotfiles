@@ -243,3 +243,6 @@ export WEBAPP_DIR=/home/robbe/go/src/github.com/mattermost/mattermost-webapp/
 # Passwordwinkel peeters
 alias zpass='PASSWORD_STORE_DIR=~/.zeus-wachtwoord-winkel pass'
 alias zpassmenu='PASSWORD_STORE_DIR=~/.zeus-wachtwoord-winkel passmenu'
+
+# Remind me of all the things that exist
+ding
