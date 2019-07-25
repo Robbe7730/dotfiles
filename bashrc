@@ -167,6 +167,7 @@ alias stubru="mpv https://live-radio.lwc.vrtcdn.be/groupc/live/f404f0f3-3917-40f
 alias gpp="g++"
 alias fixchrome="sudo chmod 1777 /dev/shm"
 alias pizza="nc localhost 4000"
+alias reboot-lfs="grub-reboot 3 && reboot"
 
 # Bluetooth
 alias bluetoothon="echo power on | bluetoothctl"
