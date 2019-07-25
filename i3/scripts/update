@@ -61,7 +61,7 @@ while getopts ":qns:b:" flag; do
 	esac
 done
 
-time pacaur -Syu
+time pacaur -Syu --noconfirm --noedit
 
 exitStatus=$?
 
