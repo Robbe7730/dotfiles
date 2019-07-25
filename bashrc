@@ -14,6 +14,22 @@ function fzf_dir() {
   cd $folder
 }
 
+#HTTPizza shortcut
+function redeem() {
+        echo "ORDER /prive/redeem HTTPizza/2.0
+secret-key => geheime sleutel
+challenge => $1
+table => $2
+" | nc 10.0.0.164 31415
+}
+
+#HTTPizza shortcut
+function pizzaState() {
+        echo "PIZZA /prive/backupState HTTPizza/2.0
+secret-key => geheime sleutel
+" | nc localhost 4000
+}
+
 # add submodule to nvim
 function addnvimmodule() {
         pushd /home/robbe/.config/nvim/bundle
