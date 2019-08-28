@@ -172,6 +172,7 @@ alias mountEncrypted="sudo cryptsetup luksOpen /dev/sdb encrypted && sudo mount 
 alias umountEncrypted="sudo umount /mnt/gpg-enc && sudo cryptsetup luksClose encrypted"
 alias gpg_master="gpg --home=/mnt/gpg-enc/.gnupg"
 alias tijdloze="mpv https://live-radio.lwc.vrtcdn.be/groupc/live/582109ca-1e71-4330-93fc-e9affee94d7d/live.isml/.m3u8"
+alias inbox="mutt -f imaps://robbe@robbevanherck.be"
 
 # Bluetooth
 alias bluetoothon="echo power on | bluetoothctl"
