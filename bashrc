@@ -126,6 +126,7 @@ alias shrug="echo \"¯\_(ツ)_/¯\""
 alias pparrot="terminal-parrot --delay 50"
 alias probleem="echo Vertel...; while [ 1 -eq 1 ]; do read; echo Zoek het zelf uit; done"
 alias yay="mpv --fs $HOME/Videos/yay.mkv"
+alias :q="vim <(echo 'TIS GEEN VIM')"
 
 # java-related
 alias junit="java org.junit.runner.JUnitCore"
