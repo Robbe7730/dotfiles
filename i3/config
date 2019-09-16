@@ -203,8 +203,7 @@ bindsym $mod+Shift+d exec cat ~/.i3/favourites | dmenu | bash - &
 exec --no-startup-id feh --bg-scale /home/robbe/Pictures/background.jpg
 
 # lockscreen
-exec --no-startup-id light-locker
-bindsym $mod+F4 exec light-locker-command -l
+bindsym $mod+F4 exec i3lock -c 000000 -f
 
 # music control
 bindsym XF86AudioPlay exec playerctl play-pause
