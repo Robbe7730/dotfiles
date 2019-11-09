@@ -245,3 +245,7 @@ alias zpassmenu='PASSWORD_STORE_DIR=~/.zeus-wachtwoord-winkel passmenu'
 
 # Remind me of all the things that exist
 ding
+
+# Remind me to BETAAL MIJN FUCKING SCHULDEN
+tabBalance -s 5
+
