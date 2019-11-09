@@ -220,9 +220,6 @@ export LD_LIBRARY_PATH=/usr/local/bin/openssl
 # For project Sysprog
 export LSAN_OPTIONS="suppressions=lsan.supp print_suppressions=0"
 
-# For Trackmania
-export WINEDLLOVERRIDES="OpenAl32=n"
-
 # Automatically use more jobs
 export MAKEFLAGS="-j4"
 
