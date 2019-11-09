@@ -103,7 +103,7 @@ function adbNet() {
 }
 
 # easily go to the current semester folder
-export huidigSemester="$HOME/Documents/2018-2019/semester2/"
+export huidigSemester="$HOME/Documents/2019-2020/semester1"
 
 # set PATHs
 export PATH=$HOME/.local/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/.rbenv/bin:/usr/bin/python2:$PATH:$HOME/.files/i3/scripts
