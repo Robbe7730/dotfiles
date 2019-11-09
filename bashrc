@@ -168,7 +168,7 @@ alias stubru="mpv https://live-radio.lwc.vrtcdn.be/groupc/live/f404f0f3-3917-40f
 alias gpp="g++"
 alias fixchrome="sudo chmod 1777 /dev/shm"
 alias pizza="nc localhost 4000"
-alias reboot-lfs="grub-reboot 3 && reboot"
+alias reboot-lfs="sudo grub-reboot 3 && reboot"
 alias mountEncrypted="sudo cryptsetup luksOpen /dev/sdb encrypted && sudo mount /dev/mapper/encrypted /mnt/gpg-enc"
 alias umountEncrypted="sudo umount /mnt/gpg-enc && sudo cryptsetup luksClose encrypted"
 alias gpg_master="gpg --home=/mnt/gpg-enc/.gnupg"
