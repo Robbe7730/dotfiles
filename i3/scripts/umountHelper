@@ -7,3 +7,5 @@ response=""
 [[ "$folder" != "" ]] && response=`sudo umount /mnt/$folder 2>&1`
 
 [[ "$response" != "" ]] && notify-send "$response"
+
+[[ "$response" == "" ]] && notify-send "Done unmounting $folder"
