@@ -70,5 +70,6 @@ echo Exit status: $exitStatus
 if [ $exitStatus = 0 ] && [ $log = true ]
 then
 	echo "Writing"
+        date >> ~/.update_history
 	setTime `date +%s`
 fi
