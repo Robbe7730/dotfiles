@@ -1,0 +1,20 @@
+#!/bin/bash
+
+cpu_min="400MHz"
+cpu_max="3.10GHz"
+
+if [[ "$1" == "min" ]]; then
+    sudo cpupower frequency-set --max $cpu_min > /dev/null &&
+    sudo cpupower frequency-set --governor powersave > /dev/null &&
+    sudo cpupower frequency-info
+    exit $?
+elif [[ "$1" == "max" ]]; then
+    sudo cpupower frequency-set --max $cpu_max > /dev/null &&
+    sudo cpupower frequency-set --governor performance > /dev/null &&
+    sudo cpupower frequency-info
+    exit $?
+else
+    echo "Usage: cpuspeed <new-state> Supported states are:
+    - max: $cpu_max
+    - min: $cpu_min" >&2 
+fi
