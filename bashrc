@@ -249,3 +249,4 @@ ding
 # Remind me to BETAAL MIJN FUCKING SCHULDEN
 tabBalance -s 5
 
+. /home/robbe/Documents/2019-2020/semester1/ModSim/emsdk/emsdk_env.sh > /dev/null
