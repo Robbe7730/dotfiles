@@ -14,22 +14,6 @@ function fzf_dir() {
   cd $folder
 }
 
-#HTTPizza shortcut
-function redeem() {
-        echo "ORDER /prive/redeem HTTPizza/2.0
-secret-key => geheime sleutel
-challenge => $1
-table => $2
-" | nc 10.0.0.164 31415
-}
-
-#HTTPizza shortcut
-function pizzaState() {
-        echo "PIZZA /prive/backupState HTTPizza/2.0
-secret-key => geheime sleutel
-" | nc localhost 4000
-}
-
 # add submodule to nvim
 function addnvimmodule() {
         pushd /home/robbe/.config/nvim/bundle
@@ -106,7 +90,7 @@ function adbNet() {
 export huidigSemester="$HOME/Documents/2019-2020/semester1"
 
 # set PATHs
-export PATH=$HOME/.local/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/.rbenv/bin:/usr/bin/python2:$PATH:$HOME/.files/i3/scripts
+export PATH=$HOME/opt/cross/bin:$HOME/.local/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/.rbenv/bin:/usr/bin/python2:$PATH:$HOME/.files/i3/scripts
 export PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 # visual
@@ -114,14 +98,10 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 # random but cool
-alias rainbows='yes ███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| lolcat'
 alias cammiechat="curl 'https://kelder.zeus.ugent.be/messages/' -H 'X-Username: Robbe' -H 'Content-Type: text/plain' --compressed --data-binary "
-alias ree="img2txt $HOME/Pictures/reeeeeee.gif -W 64 -d none"
 alias rienhorn="bash <(curl -s https://i.rxn.be/keyhorn.png)"
 alias cammie='mpv --no-correct-pts --fps 5 http://kelder.zeus.ugent.be/webcam/video/mjpg.cgi'
-# alias npm="yarn"
 alias suod="sl"
-alias vind="find"
 alias shrug="echo \"¯\_(ツ)_/¯\""
 alias pparrot="terminal-parrot --delay 50"
 alias probleem="echo Vertel...; while [ 1 -eq 1 ]; do read; echo Zoek het zelf uit; done"
@@ -140,40 +120,26 @@ alias vimwpa="vim /etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf"
 
 # shortening of common commands
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-alias helios="ssh rovherck@helios.ugent.be"
-alias webssh="ssh rovherck@webssh.ugent.be"
-alias connectUgent="sudo vpnc ugent.conf"
-alias disconnectUgent="sudo vpnc-disconnect"
 alias vimrc="vim $HOME/.bashrc"
 alias fix="pacaur -Sy"
 alias gtfo="pacaur -Rss"
-alias pong="ping ugent.be"
 alias printmd="pandoc -f markdown -t plain"
-alias gc="git commit -S -m "
 alias copy="xclip -selection clipboard"
-alias findfile="sudo find / | dmenu"
 alias copygpg="gpg --armor --export robbevanherck1@gmail.com | copy"
 alias copyssh="cat $HOME/.ssh/id_rsa.pub | copy"
 alias cdhs="cd $huidigSemester"
 alias capsstate="xset -q | grep \"Caps Lock\" | sed \"s/^.*Caps Lock: *\([onf]*\) .*$/\1/\""
 alias untar="tar -xvf"
 alias keldermuziek="ncmpcpp -h 10.0.0.5"
-alias free="free --giga -h"
 alias pptToPdf="unoconv -f pdf"
 alias kelderforward="pax11publish -e -S 10.0.0.5"
 alias kelderbackward="pax11publish -e -S \"\""
-alias cdaoc="cd /home/robbe/Documents/C/AdventOfCode2019"
 alias readme="pandoc -f gfm -t plain -s README.md | less"
 alias stubru="mpv https://live-radio.lwc.vrtcdn.be/groupc/live/f404f0f3-3917-40fd-80b6-a152761072fe/live.isml/.m3u8"
 alias gpp="g++"
 alias fixchrome="sudo chmod 1777 /dev/shm"
-alias pizza="nc localhost 4000"
-alias reboot-lfs="sudo grub-reboot 3 && reboot"
-alias mountEncrypted="sudo cryptsetup luksOpen /dev/sdb encrypted && sudo mount /dev/mapper/encrypted /mnt/gpg-enc"
-alias umountEncrypted="sudo umount /mnt/gpg-enc && sudo cryptsetup luksClose encrypted"
-alias gpg_master="gpg --home=/mnt/gpg-enc/.gnupg"
+alias gpg_master="gpg --home=/mnt/gpg/.gnupg"
 alias tijdloze="mpv https://live-radio.lwc.vrtcdn.be/groupc/live/582109ca-1e71-4330-93fc-e9affee94d7d/live.isml/.m3u8"
-alias inbox="mutt -f imaps://robbe@robbevanherck.be"
 alias youtube-mp3="youtube-dl --extract-audio --audio-format mp3"
 
 # Bluetooth
@@ -206,7 +172,6 @@ export EDITOR="nvim"
 # Why use vim?
 alias vim="nvim"
 
-eval $(thefuck --alias)
 eval "$(rbenv init -)"
 
 HISTCONTROL=ignoreboth
@@ -218,27 +183,11 @@ PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 export LD_LIBRARY_PATH=/usr/local/bin/openssl
 
-# For project Sysprog
-export LSAN_OPTIONS="suppressions=lsan.supp print_suppressions=0"
-
 # Automatically use more jobs
 export MAKEFLAGS="-j4"
 
 # Fix npm/NodeJS
 export NODE_PATH=/usr/lib/node_modules/
-
-export LFS=/mnt/lfs
-
-# Matter-moist
-export ANDROID_HOME=/opt/android-sdk
-export PATH=$ANDROID_HOME/platform-tools:$PATH
-export PATH=$ANDROID_HOME/tools:$PATH
-export PATH=$ANDROID_HOME/tools/bin:$PATH
-export MOBILE_DIR=$HOME/Documents/Random/Mattermoist/mattermost-mobile
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:/usr/local/go/bin
-export WEBAPP_DIR=/home/robbe/go/src/github.com/mattermost/mattermost-webapp/
 
 # Passwordwinkel peeters
 alias zpass='PASSWORD_STORE_DIR=~/.zeus-wachtwoord-winkel pass'
@@ -248,9 +197,4 @@ alias zpassmenu='PASSWORD_STORE_DIR=~/.zeus-wachtwoord-winkel passmenu'
 ding
 
 # Remind me to BETAAL MIJN FUCKING SCHULDEN
-tabBalance -s 1.4
-
-. /home/robbe/Documents/2019-2020/semester1/ModSim/emsdk/emsdk_env.sh > /dev/null
-
-# Cross compilation
-export PATH="$HOME/Documents/ASM/cross/opt/cross/bin/:$PATH"
+tabBalance -s 5

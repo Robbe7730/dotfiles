@@ -39,12 +39,12 @@ else:
     username = config["Zeus"]["default_username"]
     debug(f"Using default username: {username}")
 
-try:
-    debug("Sending request")
-    r = requests.get("https://tab.zeus.gent/users/" + username, headers={'Authorization': 'Token token=' + config["TabTokens"][username], "Accept": "application/json"})
-except:
-    sys.stderr.write("An error occured, please check your internet connection.\n")
-    sys.exit(2)
+#try:
+    #debug("Sending request")
+r = requests.get("https://tab.zeus.gent/users/" + username, headers={'Authorization': 'Token token=' + config["TabTokens"][username], "Accept": "application/json"})
+#except:
+    #sys.stderr.write("An error occured, please check your internet connection.\n")
+    #sys.exit(2)
 user = r.json()
 debug(f"Got response {user}")
 
