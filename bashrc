@@ -162,7 +162,7 @@ alias free="free --giga -h"
 alias pptToPdf="unoconv -f pdf"
 alias kelderforward="pax11publish -e -S 10.0.0.5"
 alias kelderbackward="pax11publish -e -S \"\""
-alias cdaoc="cd /home/robbe/Documents/Haskell/AdventOfCode2018/AdventOfCode/src/"
+alias cdaoc="cd /home/robbe/Documents/C/AdventOfCode2019"
 alias readme="pandoc -f gfm -t plain -s README.md | less"
 alias stubru="mpv https://live-radio.lwc.vrtcdn.be/groupc/live/f404f0f3-3917-40fd-80b6-a152761072fe/live.isml/.m3u8"
 alias gpp="g++"
@@ -174,6 +174,7 @@ alias umountEncrypted="sudo umount /mnt/gpg-enc && sudo cryptsetup luksClose enc
 alias gpg_master="gpg --home=/mnt/gpg-enc/.gnupg"
 alias tijdloze="mpv https://live-radio.lwc.vrtcdn.be/groupc/live/582109ca-1e71-4330-93fc-e9affee94d7d/live.isml/.m3u8"
 alias inbox="mutt -f imaps://robbe@robbevanherck.be"
+alias youtube-mp3="youtube-dl --extract-audio --audio-format mp3"
 
 # Bluetooth
 alias bluetoothon="echo power on | bluetoothctl"
@@ -247,6 +248,9 @@ alias zpassmenu='PASSWORD_STORE_DIR=~/.zeus-wachtwoord-winkel passmenu'
 ding
 
 # Remind me to BETAAL MIJN FUCKING SCHULDEN
-tabBalance -s 5
+tabBalance -s 1.4
 
 . /home/robbe/Documents/2019-2020/semester1/ModSim/emsdk/emsdk_env.sh > /dev/null
+
+# Cross compilation
+export PATH="$HOME/Documents/ASM/cross/opt/cross/bin/:$PATH"

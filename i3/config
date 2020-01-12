@@ -266,6 +266,7 @@ mode "Soundboard" {
         bindsym ampersand exec paplay /home/robbe/.files/i3/sounds/wasowasowasowassuuup.ogg
         bindsym eacute exec paplay /home/robbe/.files/i3/sounds/bitconeeeeect.ogg
         bindsym quotedbl exec paplay /home/robbe/.files/i3/sounds/turtleaaah.ogg
+        bindsym apostrophe exec paplay /home/robbe/.files/i3/sounds/hetkanmegeenklotenschelen.ogg
 
 	bindsym Escape mode "default"
 }
