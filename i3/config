@@ -15,7 +15,7 @@
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 11
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -36,7 +36,7 @@ set $mod Mod4
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec spawn-alacritty-cwd
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -164,7 +164,6 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        #font pango:monospace 8
         status_command my_status
 	#colors {
 	#	background #000000
@@ -172,6 +171,50 @@ bar {
 }
 
 ####### USER DEFINED #######
+
+# Second monitor
+workspace 1 output eDP-1-1
+workspace 2 output eDP-1-1
+workspace 3 output eDP-1-1
+workspace 4 output eDP-1-1
+workspace 5 output eDP-1-1
+workspace 6 output eDP-1-1
+workspace 7 output eDP-1-1
+workspace 8 output eDP-1-1
+workspace 9 output eDP-1-1
+workspace 10 output eDP-1-1
+workspace 11 output HDMI-0
+workspace 12 output HDMI-0
+workspace 13 output HDMI-0
+workspace 14 output HDMI-0
+workspace 15 output HDMI-0
+workspace 16 output HDMI-0
+workspace 17 output HDMI-0
+workspace 18 output HDMI-0
+workspace 19 output HDMI-0
+workspace 20 output HDMI-0
+
+bindsym $mod+Mod2+KP_1 workspace 11
+bindsym $mod+Mod2+KP_2 workspace 12
+bindsym $mod+Mod2+KP_3 workspace 13
+bindsym $mod+Mod2+KP_4 workspace 14
+bindsym $mod+Mod2+KP_5 workspace 15
+bindsym $mod+Mod2+KP_6 workspace 16
+bindsym $mod+Mod2+KP_7 workspace 17
+bindsym $mod+Mod2+KP_8 workspace 18
+bindsym $mod+Mod2+KP_9 workspace 19
+bindsym $mod+Mod2+KP_0 workspace 20
+
+bindsym $mod+Shift+Mod2+KP_End move container to workspace 11
+bindsym $mod+Shift+Mod2+KP_Down move container to workspace 12
+bindsym $mod+Shift+Mod2+KP_Next move container to workspace 13
+bindsym $mod+Shift+Mod2+KP_Left move container to workspace 14
+bindsym $mod+Shift+Mod2+KP_Begin move container to workspace 15
+bindsym $mod+Shift+Mod2+KP_Right move container to workspace 16
+bindsym $mod+Shift+Mod2+KP_Home move container to workspace 17
+bindsym $mod+Shift+Mod2+KP_Up move container to workspace 18
+bindsym $mod+Shift+Mod2+KP_Prior move container to workspace 19
+bindsym $mod+Shift+Mod2+KP_Insert move container to workspace 20
 
 # Toggle bar
 bindsym $mod+m bar mode toggle
