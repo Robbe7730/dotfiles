@@ -60,15 +60,15 @@ function mdtohtml() {
 function addWifi() {
 	if [ "$2" == "" ]
 	then
-		echo "network={" >> /etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf
-		echo "	ssid=\"$1\"" >> /etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf
-		echo "	key_mgmt=NONE" >> /etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf
-		echo "}" >> /etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf
+		echo "network={" >> /etc/wpa_supplicant/wpa_supplicant-wlo1.conf
+		echo "	ssid=\"$1\"" >> /etc/wpa_supplicant/wpa_supplicant-wlo1.conf
+		echo "	key_mgmt=NONE" >> /etc/wpa_supplicant/wpa_supplicant-wlo1.conf
+		echo "}" >> /etc/wpa_supplicant/wpa_supplicant-wlo1.conf
 	else
 		res=`wpa_passphrase "$1" "$2"`
 		if [ $? == 0 ]
 		then
-			echo $res >> /etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf
+			echo $res >> /etc/wpa_supplicant/wpa_supplicant-wlo1.conf
 		else
 			echo $res
 		fi
@@ -87,7 +87,7 @@ function adbNet() {
 }
 
 # easily go to the current semester folder
-export huidigSemester="$HOME/Documents/2019-2020/semester1"
+export huidigSemester="$HOME/Documents/2019-2020/semester2"
 
 # set PATHs
 export PATH=$HOME/opt/cross/bin:$HOME/.local/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/.rbenv/bin:/usr/bin/python2:$PATH:$HOME/.files/i3/scripts
@@ -114,9 +114,9 @@ alias jc="javac *.java; java"
 alias ju="javac *.java; junit"
 
 # wifi-related
-alias fixwifi="sudo systemctl restart wpa_supplicant@wlp3s0"
-alias wifistatus="watch systemctl status wpa_supplicant@wlp3s0"
-alias vimwpa="vim /etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf"
+alias fixwifi="sudo systemctl restart wpa_supplicant@wlo1"
+alias wifistatus="watch systemctl status wpa_supplicant@wlo1"
+alias vimwpa="vim /etc/wpa_supplicant/wpa_supplicant-wlo1.conf"
 
 # shortening of common commands
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
@@ -197,4 +197,7 @@ alias zpassmenu='PASSWORD_STORE_DIR=~/.zeus-wachtwoord-winkel passmenu'
 ding
 
 # Remind me to BETAAL MIJN FUCKING SCHULDEN
-tabBalance -s 5
+tabBalance -s 1.6
+
+# For cross-compilation
+export PATH="/home/robbe/Documents/ASM/gcc-cross/opt/cross/bin:$PATH"
