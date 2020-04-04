@@ -1,4 +1,4 @@
 #!/bin/bash
 
-xbacklight + 5%
+sudo brightnessctl s +10
 # killall -USR1 myStatus
