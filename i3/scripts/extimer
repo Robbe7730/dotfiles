@@ -1,0 +1,32 @@
+#!/bin/bash
+# Name: Make an exam clock
+# First argument is the number of blocks to show in the progress bar
+# By Robbert Gurdeep Singh
+################################################################################
+
+
+startT="22:49 today"
+endT="23:09 today"
+
+
+startD=$(date +%s --date "$startT" )
+endD=$(date +%s --date "$endT" )
+duration=$(( $endD - $startD ))
+
+
+
+max=${1:-20}
+
+while :;
+do
+    nowD=$(date +%s)
+    progress=$(( $nowD - $startD ))
+    blocks=$(( $max * $progress / $duration  ))
+    percent=$(( 100 * $progress / $duration  ))
+    echo -n "$(date +%H:%M) "
+    seq $blocks | while read l; do echo -n "#"; done
+    seq $(( $max - $blocks)) | while read l; do echo -n "_"; done
+    echo -n " ($percent%)"
+    sleep 1
+    echo -ne "\r"
+done
