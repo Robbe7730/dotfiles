@@ -1,0 +1,5 @@
+#!/bin/bash
+
+SELECTION="`ls -1 $HOME/.screenlayout | sed 's/\.sh$//g' | dmenu`"
+
+$HOME/.screenlayout/$SELECTION.sh

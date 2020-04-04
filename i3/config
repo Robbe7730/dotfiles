@@ -172,6 +172,9 @@ bar {
 
 ####### USER DEFINED #######
 
+# Window layout
+bindsym $mod+Shift+w exec arandr-helper
+
 # Second monitor
 workspace 1 output eDP-1-1
 workspace 2 output eDP-1-1
