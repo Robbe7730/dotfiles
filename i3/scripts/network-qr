@@ -3,7 +3,7 @@
 from collections import defaultdict
 import qrcode
 
-with open("/etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf", "r") as file:
+with open("/etc/wpa_supplicant/wpa_supplicant-wlo1.conf", "r") as file:
     lines = [x.strip() for x in file.readlines()]
 
 i = 0

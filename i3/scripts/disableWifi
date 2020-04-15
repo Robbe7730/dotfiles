@@ -1,8 +1,8 @@
 #!/bin/bash
 
-sudo systemctl disable wpa_supplicant@wlp3s0
-sudo systemctl disable dhcpcd@wlp3s0
+sudo systemctl disable wpa_supplicant@wlo1
+sudo systemctl disable dhcpcd@wlo1
 
-sudo systemctl stop wpa_supplicant@wlp3s0
-sudo systemctl stop dhcpcd@wlp3s0
+sudo systemctl stop wpa_supplicant@wlo1
+sudo systemctl stop dhcpcd@wlo1
 
