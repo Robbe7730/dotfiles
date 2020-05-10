@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ $# -ne 3 ]; then
+	echo "Usage: mountEncrypted <device> <mapper name> <mountpoint>" >&2
+fi
+
+sudo cryptsetup luksOpen $1 $2
+
+if [ $? -ne 0 ]; then
+	echo "Could not open device" >&2
+	exit 1
+fi
+
+sudo mount /dev/mapper/$2 $3
+
+if [ $? -ne 0 ]; then
+	echo "Mount failed" >&2
+	exit 1
+fi

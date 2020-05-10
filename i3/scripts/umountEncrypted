@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+	echo "Usage: mountEncrypted <mapper name>" >&2
+	exit 1
+fi
+
+sudo umount /dev/mapper/$1
+
+if [ $? -ne 0 ]; then
+	echo "Umount failed" >&2
+	exit 1
+fi
+
+sudo cryptsetup luksClose $1
+
+if [ $? -ne 0 ]; then
+	echo "Could not close device" >&2
+	exit 1
+fi
+
