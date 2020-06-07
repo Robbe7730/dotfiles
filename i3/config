@@ -172,6 +172,9 @@ bar {
 
 ####### USER DEFINED #######
 
+# Godot should be floating
+for_window [instance="Godot_Engine"] floating enable
+
 # Window layout
 bindsym $mod+Shift+w exec arandr-helper
 
