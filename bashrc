@@ -197,7 +197,7 @@ alias zpassmenu='PASSWORD_STORE_DIR=~/.zeus-wachtwoord-winkel passmenu'
 ding
 
 # Remind me to BETAAL MIJN FUCKING SCHULDEN
-tabBalance -s 1.6
+# tabBalance -s 1.6
 
 # For cross-compilation
 export PATH="/home/robbe/Documents/ASM/gcc-cross/opt/cross/bin:$PATH"
