@@ -170,6 +170,9 @@ bar {
 
 ####### USER DEFINED #######
 
+# For Steam controller keyboard
+for_window [title="Steam Keyboard"] floating enable
+
 # Godot should be floating
 for_window [instance="Godot_Engine"] floating enable
 
