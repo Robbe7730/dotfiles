@@ -16,10 +16,25 @@ function fzf_dir() {
 
 # add submodule to nvim
 function addnvimmodule() {
-        pushd /home/robbe/.config/nvim/bundle
-        git submodule add $1
-        vim status.md
-        popd
+	if [ "$1" = "" ]; then
+		echo "Usage: addnvimmodule <user>/<repo>" >&2
+		return 1
+	fi
+
+	if (echo "$1" | grep -Eqv "^[a-zA-Z0-9._-]+/[a-zA-Z0-9._-]+$"); then
+		echo "Invalid user/repo: $1" >&2
+		return 1
+	fi
+
+	# Add plugin to init.vim
+	sed -i "/\"NEW_PLUG/i \
+Plug '$1'" $HOME/.config/nvim/init.vim
+
+	# Add plugin to nvim_modules.md
+	echo "$1: " >>$HOME/.files/nvim_modules.md
+
+	# Install plugin and show files for further configuration
+	nvim +PlugInstall $HOME/.config/nvim/init.vim $HOME/.files/nvim_modules.md
 }
 
 # run a Flask app
