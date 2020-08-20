@@ -6,6 +6,11 @@ set number
 set wildmode=longest,list
 filetype plugin indent on
 syntax on
+set tw=80
+
+" Enable ALE completion
+let g:ale_completion_enabled = 1
+let g:ale_completion_autoimport = 1
 
 call plug#begin()
 
@@ -32,6 +37,9 @@ let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \   'sh': ['shfmt'],
 \   'python': ['autopep8', 'reorder-python-imports'],
+\   'c': ['clang-format'],
+\   'json': ['jq'],
+\   'md': ['prettier']
 \}
 
 nmap <F8> <Plug>(ale_fix)
@@ -41,6 +49,8 @@ nmap <silent> <C-Up> <Plug>(ale_previous_wrap)
 
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 nmap <silent> <C-Down> <Plug>(ale_next_wrap)
+
+nmap <Tab> :ALEDetail<CR>
 
 let g:ale_set_quickfix = 1
 
