@@ -20,6 +20,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
+Plug 'lervag/vimtex'
 "NEW_PLUG (add new Plug lines above this line)
 
 call plug#end()
@@ -76,3 +77,9 @@ let g:airline#extensions#ale#enabled = 1
 
 "---- vim-airline/vim-airline-themes ----
 "let g:airline_theme='simple'
+
+"---- lervag/vimtex ----
+let g:tex_flavor = 'latex'
+let g:vimtex_view_general_viewer = 'evince'
+
+nmap <C-t> :VimtexTocToggle<CR>
