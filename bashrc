@@ -100,7 +100,7 @@ function adbNet() {
 export huidigSemester="$HOME/Documents/2019-2020/semester2"
 
 # set PATHs
-export PATH=/home/robbe/Documents/ASM/gcc-cross/opt/cross/bin/:$HOME/.local/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/.rbenv/bin:/home/robbe/.cargo/bin:$PATH:$HOME/.files/i3/scripts
+export PATH=$HOME/Documents/ASM/gcc-cross/opt2/cross/bin/:$HOME/Documents/ASM/gcc-cross/opt/cross/bin/:$HOME/.local/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/.rbenv/bin:/home/robbe/.cargo/bin:$PATH:$HOME/.files/i3/scripts
 export PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 # visual
