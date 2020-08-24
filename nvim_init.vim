@@ -82,4 +82,9 @@ let g:airline#extensions#ale#enabled = 1
 let g:tex_flavor = 'latex'
 let g:vimtex_view_general_viewer = 'evince'
 
-nmap <C-t> :VimtexTocToggle<CR>
+" Close the quickfix/linter window when a key is pressed
+let g:vimtex_quickfix_autoclose_after_keystrokes = 1
+
+let g:vimtex_quickfix_open_on_warning = 0
+
+nmap <C-t> <Plug>(vimtex-toc-toggle)
