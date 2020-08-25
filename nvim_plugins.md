@@ -5,3 +5,4 @@ vim-airline/vim-airline-themes: Themes for vim-airline
 scrooloose/nerdcommenter: Comment lines
 tpope/vim-fugitive: Git integration
 lervag/vimtex: LaTeX support
+ycm-core/YouCompleteMe: Completion
