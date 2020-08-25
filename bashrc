@@ -34,7 +34,7 @@ Plug '$1'" $HOME/.files/nvim_init.vim
 	echo "$1: " >>$HOME/.files/nvim_plugins.md
 
 	# Install plugin and show files for further configuration
-	nvim +PlugInstall $HOME/.files/nvim_init.vim $HOME/.files/nvim_modules.md
+	nvim +PlugInstall $HOME/.files/nvim_init.vim $HOME/.files/nvim_plugins.md
 }
 
 # run a Flask app
