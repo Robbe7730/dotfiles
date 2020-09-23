@@ -97,7 +97,7 @@ function adbNet() {
 }
 
 # easily go to the current semester folder
-export huidigSemester="$HOME/Documents/2019-2020/semester2"
+export huidigSemester="$HOME/Documents/UGent/Master/2020-2021/semester1/"
 
 # set PATHs
 export PATH=$HOME/Documents/ASM/gcc-cross/opt2/cross/bin/:$HOME/Documents/ASM/gcc-cross/opt/cross/bin/:$HOME/.local/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/.rbenv/bin:/home/robbe/.cargo/bin:$PATH:$HOME/.files/i3/scripts
