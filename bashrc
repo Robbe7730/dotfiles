@@ -152,6 +152,7 @@ alias gpg_master="gpg --home=/mnt/gpg/.gnupg"
 alias tijdloze="mpv https://live-radio.lwc.vrtcdn.be/groupc/live/582109ca-1e71-4330-93fc-e9affee94d7d/live.isml/.m3u8"
 alias youtube-mp3="youtube-dl --extract-audio --audio-format mp3"
 alias updatenvimmodules="nvim +PlugClean +PlugUpdate +qa"
+alias pong="ping robbevanherck.be"
 
 # Bluetooth
 alias bluetoothon="echo power on | bluetoothctl"
