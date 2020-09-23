@@ -110,7 +110,7 @@ alias grep='grep --color=auto'
 # random but cool
 alias cammiechat="curl 'https://kelder.zeus.ugent.be/messages/' -H 'X-Username: Robbe' -H 'Content-Type: text/plain' --compressed --data-binary "
 alias rienhorn="bash <(curl -s https://i.rxn.be/keyhorn.png)"
-alias cammie='mpv --no-correct-pts --fps 5 http://kelder.zeus.ugent.be/webcam/video/mjpg.cgi'
+alias cammie='mpv --no-correct-pts --fps=5 http://kelder.zeus.ugent.be/webcam/video/mjpg.cgi'
 alias suod="sl"
 alias shrug="echo \"¯\_(ツ)_/¯\""
 alias pparrot="terminal-parrot --delay 49"
