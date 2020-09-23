@@ -18,6 +18,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'lervag/vimtex'
 Plug 'ycm-core/YouCompleteMe'
+Plug 'niklasl/vim-rdf'
+Plug 'tounaishouta/coq.vim'
 "NEW_PLUG (add new Plug lines above this line)
 
 call plug#end()
@@ -37,7 +39,8 @@ let g:ale_fixers = {
 \   'python': ['autopep8', 'reorder-python-imports'],
 \   'c': ['clang-format'],
 \   'json': ['jq'],
-\   'md': ['prettier']
+\   'md': ['prettier'],
+\   'tex': ['latexindent', 'textlint']
 \}
 
 " Fix on F8
@@ -90,6 +93,12 @@ let g:vimtex_quickfix_open_on_warning = 0
 
 nmap <C-t> <Plug>(vimtex-toc-toggle)
 
+let g:vimtex_complete_close_braces = 1
+
+if @% == 'hoofdstuk*.tex'
+	let b:main_tex_file='samenvatting.tex'
+endif
+
 "---- ycm-core/YouCompleteMe ----
 
 " Turn off YCM
@@ -119,3 +128,9 @@ let g:ycm_semantic_triggers.tex=['re!\\[A-Za-z]+',
   \ 're!\\(include(only)?|input|subfile){[^}]*',
   \ 're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
   \ 're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*']
+
+"---- tounaishouta/coq.vim ----
+
+" Run to cursor on ,,
+autocmd Filetype coq nnoremap ,, :CoqRunToCursor<CR>
+

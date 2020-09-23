@@ -6,3 +6,5 @@ scrooloose/nerdcommenter: Comment lines
 tpope/vim-fugitive: Git integration
 lervag/vimtex: LaTeX support
 ycm-core/YouCompleteMe: Completion
+niklasl/vim-rdf: RDF syntax highlighting
+tounaishouta/coq.vim: Coq helper
