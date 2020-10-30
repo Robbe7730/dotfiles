@@ -215,3 +215,10 @@ ding
 
 # Remind me to BETAAL MIJN FUCKING SCHULDEN
 # tabBalance -s 1.6
+
+# For GBA dev
+export DEVKITPRO=/opt/devkitpro
+export DEVKITARM=/opt/devkitpro/devkitARM
+export DEVKITPPC=/opt/devkitpro/devkitPPC
+
+export PATH=$DEVKITPRO/tools/bin:$PATH
