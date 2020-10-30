@@ -77,7 +77,7 @@ let g:airline#extensions#branch#empty_message = 'no branch'
 
 let g:airline#extensions#branch#vcs_checks = ['untracked', 'dirty']
 
-let g:airline#extensions#ale#enabled = 1
+"let g:airline#extensions#ale#enabled = 1
 
 "---- vim-airline/vim-airline-themes ----
 "let g:airline_theme='simple'
@@ -128,6 +128,9 @@ let g:ycm_semantic_triggers.tex=['re!\\[A-Za-z]+',
   \ 're!\\(include(only)?|input|subfile){[^}]*',
   \ 're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
   \ 're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*']
+
+" Disable linter/syntax checker
+let g:ycm_show_diagnostics_ui = 0
 
 "---- tounaishouta/coq.vim ----
 
