@@ -40,7 +40,8 @@ let g:ale_fixers = {
 \   'c': ['clang-format'],
 \   'json': ['jq'],
 \   'md': ['prettier'],
-\   'tex': ['latexindent', 'textlint']
+\   'tex': ['latexindent', 'textlint'],
+\   'html': ['fecs', 'html-beautify', 'prettier', 'tidy']
 \}
 
 " Fix on F8
