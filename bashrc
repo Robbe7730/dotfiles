@@ -230,3 +230,6 @@ export CUDA_HOME=/opt/cuda/
 # Redpencil mu-cli
 PATH="/home/robbe/Documents/redpencil.io/mu-cli/:$PATH"
 source /home/robbe/Documents/redpencil.io/mu-cli/completions
+
+# Rustup
+PATH="$HOME/.cargo/bin:$PATH"
