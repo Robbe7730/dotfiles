@@ -19,7 +19,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'lervag/vimtex'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'niklasl/vim-rdf'
-Plug 'tounaishouta/coq.vim'
+Plug 'whonore/Coqtail'
 "NEW_PLUG (add new Plug lines above this line)
 
 call plug#end()
@@ -134,8 +134,5 @@ let g:ycm_semantic_triggers.tex=['re!\\[A-Za-z]+',
 " Disable linter/syntax checker
 let g:ycm_show_diagnostics_ui = 0
 
-"---- tounaishouta/coq.vim ----
-
-" Run to cursor on ,,
-autocmd Filetype coq nnoremap ,, :CoqRunToCursor<CR>
+"---- whonore/Coqtail ----
 
