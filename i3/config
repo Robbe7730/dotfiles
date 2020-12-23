@@ -34,7 +34,7 @@ set $mod Mod4
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec spawn-alacritty-cwd
+bindsym $mod+Return exec spawn-alacritty-cwd ranger
 
 # kill focused window
 bindsym $mod+Shift+q kill
