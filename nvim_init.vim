@@ -1,12 +1,32 @@
+" Ignore case in searches and commands
 set ignorecase
-set mouse=v
+
+" Enable Mouse support in all modes
+set mouse=a
+
+" Highlight all search matches (turn off temporarily with :nohlsearch)
 set hlsearch
+
+" Automatically indent when starting a new line
 set autoindent
+
+" Enable line numbers
 set number
+
+" Set completion mode for wildcards
 set wildmode=longest,list
+
+" Set indentation on for the plugin filetype
 filetype plugin indent on
+
+" Enable syntax highlighting
 syntax on
+
+" Set textwidth to 80
 set tw=80
+
+" Set fancy colors
+set termguicolors
 
 call plug#begin()
 
@@ -97,9 +117,21 @@ nmap <C-t> <Plug>(vimtex-toc-toggle)
 
 let g:vimtex_complete_close_braces = 1
 
+" For DERP
 if @% == 'hoofdstuk*.tex'
 	let b:main_tex_file='samenvatting.tex'
 endif
+
+let g:vimtex_compiler_latexmk = {
+    \ 'options' : [
+    \   '-pdf',
+    \   '-shell-escape',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
 
 "---- ycm-core/YouCompleteMe ----
 
