@@ -28,6 +28,9 @@ set tw=80
 " Set fancy colors
 set termguicolors
 
+" Expand tabs to spaces
+set expandtab
+
 call plug#begin()
 
 Plug 'dense-analysis/ale'
