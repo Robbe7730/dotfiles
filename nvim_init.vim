@@ -31,6 +31,12 @@ set termguicolors
 " Expand tabs to spaces
 set expandtab
 
+" Press ctrl+s for spell-check options
+map <C-s>e :set spell spelllang=en_us<CR>
+map <C-s>n :set spell spelllang=nl<CR>
+map <C-s><C-s> :set nospell<CR>
+
+
 call plug#begin()
 
 Plug 'dense-analysis/ale'
