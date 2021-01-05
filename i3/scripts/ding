@@ -15,6 +15,10 @@ else
   case $flag in 
     a)
       echo $OPTARG >> ~/.i3/dingen
+      pushd ~/.i3
+      git add dingen
+      git commit -m "$OPTARG is een ding"
+      popd
       ;;
     l)
       cat ~/.i3/dingen
