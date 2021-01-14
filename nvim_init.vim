@@ -32,7 +32,8 @@ set termguicolors
 set expandtab
 
 " Press ctrl+s for spell-check options
-map <C-s>e :set spell spelllang=en_us<CR>
+map <C-s>ea :set spell spelllang=en_us<CR>
+map <C-s>eb :set spell spelllang=en_gb<CR>
 map <C-s>n :set spell spelllang=nl<CR>
 map <C-s><C-s> :set nospell<CR>
 
