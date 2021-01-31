@@ -229,8 +229,8 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/cuda/lib64"
 export CUDA_HOME=/opt/cuda/
 
 # Redpencil mu-cli
-PATH="/home/robbe/Documents/redpencil.io/mu-cli/:$PATH"
-source /home/robbe/Documents/redpencil.io/mu-cli/completions
+# PATH="/home/robbe/Documents/redpencil.io/mu-cli/:$PATH"
+# source /home/robbe/Documents/redpencil.io/mu-cli/completions
 
 # Rustup
 PATH="$HOME/.cargo/bin:$PATH"
