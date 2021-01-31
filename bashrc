@@ -154,6 +154,7 @@ alias youtube-mp3="youtube-dl --extract-audio --audio-format mp3"
 alias updatenvimmodules="nvim +PlugClean +PlugUpdate +qa"
 alias pong="ping robbevanherck.be"
 alias willy="mpv https://playerservices.streamtheworld.com/api/livestream-redirect/WILLY.mp3"
+alias wpa_cli="wpa_cli -i wlo1"
 
 # Bluetooth
 alias bluetoothon="echo power on | bluetoothctl"
