@@ -180,26 +180,26 @@ for_window [instance="Godot_Engine"] floating enable
 bindsym $mod+Shift+w exec arandr-helper
 
 # Second monitor
-workspace 1 output eDP-1-1
-workspace 2 output eDP-1-1
-workspace 3 output eDP-1-1
-workspace 4 output eDP-1-1
-workspace 5 output eDP-1-1
-workspace 6 output eDP-1-1
-workspace 7 output eDP-1-1
-workspace 8 output eDP-1-1
-workspace 9 output eDP-1-1
-workspace 10 output eDP-1-1
-workspace 11 output HDMI-0
-workspace 12 output HDMI-0
-workspace 13 output HDMI-0
-workspace 14 output HDMI-0
-workspace 15 output HDMI-0
-workspace 16 output HDMI-0
-workspace 17 output HDMI-0
-workspace 18 output HDMI-0
-workspace 19 output HDMI-0
-workspace 20 output HDMI-0
+workspace 1 output eDP-1
+workspace 2 output eDP-1
+workspace 3 output eDP-1
+workspace 4 output eDP-1
+workspace 5 output eDP-1
+workspace 6 output eDP-1
+workspace 7 output eDP-1
+workspace 8 output eDP-1
+workspace 9 output eDP-1
+workspace 10 output eDP-1
+workspace 11 output HDMI-1-0
+workspace 12 output HDMI-1-0
+workspace 13 output HDMI-1-0
+workspace 14 output HDMI-1-0
+workspace 15 output HDMI-1-0
+workspace 16 output HDMI-1-0
+workspace 17 output HDMI-1-0
+workspace 18 output HDMI-1-0
+workspace 19 output HDMI-1-0
+workspace 20 output HDMI-1-0
 
 bindsym $mod+Mod2+KP_1 workspace 11
 bindsym $mod+Mod2+KP_2 workspace 12
