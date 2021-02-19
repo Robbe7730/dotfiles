@@ -136,25 +136,25 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+	# These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym $left       resize shrink width 10 px or 10 ppt
-        bindsym $down       resize grow height 10 px or 10 ppt
-        bindsym $up         resize shrink height 10 px or 10 ppt
-        bindsym $right      resize grow width 10 px or 10 ppt
+	# Pressing left will shrink the window’s width.
+	# Pressing right will grow the window’s width.
+	# Pressing up will shrink the window’s height.
+	# Pressing down will grow the window’s height.
+	bindsym $left       resize shrink width 10 px or 10 ppt
+	bindsym $down       resize grow height 10 px or 10 ppt
+	bindsym $up         resize shrink height 10 px or 10 ppt
+	bindsym $right      resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left        resize shrink width 10 px or 10 ppt
-        bindsym Down        resize grow height 10 px or 10 ppt
-        bindsym Up          resize shrink height 10 px or 10 ppt
-        bindsym Right       resize grow width 10 px or 10 ppt
+	# same bindings, but for the arrow keys
+	bindsym Left        resize shrink width 10 px or 10 ppt
+	bindsym Down        resize grow height 10 px or 10 ppt
+	bindsym Up          resize shrink height 10 px or 10 ppt
+	bindsym Right       resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Escape mode "default"
+	# back to normal: Enter or Escape
+	bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -162,13 +162,17 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command my_status
+	status_command my_status
 	#colors {
 	#	background #000000
 	#}
 }
 
 ####### USER DEFINED #######
+
+# Maximum fan speed
+bindsym $mod+F7 exec i8kfan 2 2
+bindsym --release $mod+F7 exec i8kfan 0 0
 
 # For Steam controller keyboard
 for_window [title="Steam Keyboard"] floating enable
@@ -269,7 +273,7 @@ bindsym XF86AudioRaiseVolume exec /home/robbe/.files/i3/scripts/volumeUp
 bindsym XF86AudioLowerVolume exec /home/robbe/.files/i3/scripts/volumeDown
 bindsym XF86AudioMute exec /home/robbe/.files/i3/scripts/volumeMute
 
-# brightness management 
+# brightness management
 bindsym XF86MonBrightnessUp exec /home/robbe/.files/i3/scripts/brightnessUp
 bindsym XF86MonBrightnessDown exec /home/robbe/.files/i3/scripts/brightnessDown
 
@@ -287,7 +291,7 @@ mode "Soundboard" {
 	bindsym o exec /home/robbe/.files/i3/scripts/memebigboy
 	bindsym p exec paplay /home/robbe/.files/i3/sounds/wauw.ogg
 	bindsym twosuperior exec killall paplay
-	
+
 	bindsym q exec paplay /home/robbe/.files/i3/sounds/thethinggoes.ogg
 	bindsym s exec paplay /home/robbe/.files/i3/sounds/skrraa.ogg
 	bindsym d exec paplay /home/robbe/.files/i3/sounds/sadviolin.ogg
@@ -303,23 +307,23 @@ mode "Soundboard" {
 	bindsym x exec paplay /home/robbe/.files/i3/sounds/ihavecripplingdepression.ogg
 	bindsym c exec paplay /home/robbe/.files/i3/sounds/ihaveosteoporosis.ogg
 	bindsym v exec paplay /home/robbe/.files/i3/sounds/imgay.ogg
-        bindsym b exec paplay /home/robbe/.files/i3/sounds/itstimetostop.ogg
-        bindsym n exec paplay /home/robbe/.files/i3/sounds/heyvsaucemichaelhere.ogg
+	bindsym b exec paplay /home/robbe/.files/i3/sounds/itstimetostop.ogg
+	bindsym n exec paplay /home/robbe/.files/i3/sounds/heyvsaucemichaelhere.ogg
 
-        bindsym comma exec paplay /home/robbe/.files/i3/sounds/oooooooooooooo.ogg
-        bindsym semicolon exec paplay /home/robbe/.files/i3/sounds/theyaskyouhowyouare.ogg
-        bindsym colon exec paplay /home/robbe/.files/i3/sounds/thuglife.ogg
-        bindsym equal exec paplay /home/robbe/.files/i3/sounds/wegotem.ogg
-        bindsym ugrave exec paplay /home/robbe/.files/i3/sounds/evilmorty.ogg
-        bindsym mu exec paplay /home/robbe/.files/i3/sounds/hmmmwhatyousay.ogg
-        bindsym dead_circumflex exec paplay /home/robbe/.files/i3/sounds/whyarewestillhere.ogg
-        bindsym dollar exec paplay /home/robbe/.files/i3/sounds/fbiopenup.ogg
-        bindsym less exec paplay /home/robbe/.files/i3/sounds/crabrave.ogg
+	bindsym comma exec paplay /home/robbe/.files/i3/sounds/oooooooooooooo.ogg
+	bindsym semicolon exec paplay /home/robbe/.files/i3/sounds/theyaskyouhowyouare.ogg
+	bindsym colon exec paplay /home/robbe/.files/i3/sounds/thuglife.ogg
+	bindsym equal exec paplay /home/robbe/.files/i3/sounds/wegotem.ogg
+	bindsym ugrave exec paplay /home/robbe/.files/i3/sounds/evilmorty.ogg
+	bindsym mu exec paplay /home/robbe/.files/i3/sounds/hmmmwhatyousay.ogg
+	bindsym dead_circumflex exec paplay /home/robbe/.files/i3/sounds/whyarewestillhere.ogg
+	bindsym dollar exec paplay /home/robbe/.files/i3/sounds/fbiopenup.ogg
+	bindsym less exec paplay /home/robbe/.files/i3/sounds/crabrave.ogg
 
-        bindsym ampersand exec paplay /home/robbe/.files/i3/sounds/wasowasowasowassuuup.ogg
-        bindsym eacute exec paplay /home/robbe/.files/i3/sounds/bitconeeeeect.ogg
-        bindsym quotedbl exec paplay /home/robbe/.files/i3/sounds/turtleaaah.ogg
-        bindsym apostrophe exec paplay /home/robbe/.files/i3/sounds/hetkanmegeenklotenschelen.ogg
+	bindsym ampersand exec paplay /home/robbe/.files/i3/sounds/wasowasowasowassuuup.ogg
+	bindsym eacute exec paplay /home/robbe/.files/i3/sounds/bitconeeeeect.ogg
+	bindsym quotedbl exec paplay /home/robbe/.files/i3/sounds/turtleaaah.ogg
+	bindsym apostrophe exec paplay /home/robbe/.files/i3/sounds/hetkanmegeenklotenschelen.ogg
 
 	bindsym Escape mode "default"
 }
