@@ -171,8 +171,8 @@ bar {
 ####### USER DEFINED #######
 
 # Maximum fan speed
-bindsym $mod+F7 exec i8kfan 2 2
-bindsym --release $mod+F7 exec i8kfan 0 0
+bindsym $mod+F7 exec sudo dell-bios-fan-control 0 && i8kfan 3 3
+bindsym --release $mod+F7 exec i8kfan 0 0 && sudo dell-bios-fan-control 1
 
 # For Steam controller keyboard
 for_window [title="Steam Keyboard"] floating enable
