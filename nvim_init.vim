@@ -37,6 +37,15 @@ map <C-s>eb :set spell spelllang=en_gb<CR>
 map <C-s>n :set spell spelllang=nl<CR>
 map <C-s><C-s> :set nospell<CR>
 
+" Set the default shiftwidth to 4
+set shiftwidth=4
+
+" Shortcuts for shiftwidth
+noremap <C-t>8 :set shiftwidth=8<CR>
+noremap <C-t>4 :set shiftwidth=4<CR>
+noremap <C-t>3 :set shiftwidth=3<CR>
+noremap <C-t>2 :set shiftwidth=2<CR>
+
 
 call plug#begin()
 
