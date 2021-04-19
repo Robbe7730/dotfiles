@@ -124,6 +124,7 @@ let g:coc_global_extensions = [
             \ 'coc-tsserver',
             \ 'coc-eslint',
             \ 'coc-vimtex',
+            \ 'coc-python',
 \]
 
 nnoremap <A-CR> :CocAction<CR>
