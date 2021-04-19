@@ -71,11 +71,19 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "---- dense-analysis/ale ----
 "https://github.com/dense-analysis/ale/blob/master/supported-tools.md
 
+" fix venv
+let g:ale_python_pylint_change_directory=0
+let g:ale_python_flake8_change_directory=0
+
+let g:ale_linters = {
+\   'python': ['flake8', 'pylint'],
+\}
+
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint'],
 \   'sh': ['shfmt'],
-\   'python': ['autopep8', 'reorder-python-imports'],
+\   'python': ['autopep8', 'reorder-python-imports', 'isort'],
 \   'c': ['clang-format'],
 \   'json': ['jq'],
 \   'md': ['prettier'],
