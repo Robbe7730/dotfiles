@@ -9,3 +9,4 @@ ycm-core/YouCompleteMe: [DISABLED] Completion
 niklasl/vim-rdf: RDF syntax highlighting
 whonore/Coqtail: Coq support
 neoclide/coc.nvim: Completion
+junegunn/vim-easy-align: Align columns

@@ -58,6 +58,7 @@ Plug 'lervag/vimtex'
 Plug 'niklasl/vim-rdf'
 Plug 'whonore/Coqtail'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/vim-easy-align'
 "NEW_PLUG (add new Plug lines above this line)
 
 call plug#end()
@@ -229,3 +230,11 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " ----- End of parts of coc example configuration -----
+
+"---- junegunn/vim-easy-align ----
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
