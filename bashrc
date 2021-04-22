@@ -155,6 +155,8 @@ alias updatenvimmodules="nvim +PlugClean +PlugUpdate +qa"
 alias pong="ping robbevanherck.be"
 alias willy="mpv https://playerservices.streamtheworld.com/api/livestream-redirect/WILLY.mp3"
 alias wpa_cli="wpa_cli -i wlo1"
+alias addvirtualcamera="sudo modprobe v4l2loopback devices=1 video_nr=1 card_label=\"RTMP server\" exclusive_caps=1"
+alias addmicloopback="pactl load-module module-loopback latency_msec=1"
 
 # Bluetooth
 alias bluetoothon="echo power on | bluetoothctl"
