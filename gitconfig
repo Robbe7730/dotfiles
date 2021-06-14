@@ -1,7 +1,7 @@
 [user]
 	email = robbe@robbevanherck.be
 	name = Robbe Van Herck
-	signingKey = 4D1C8E8FBD1C7188
+	signingKey = D188C6D6914950AC
 
 [filter "lfs"]
 	process = git-lfs filter-process
