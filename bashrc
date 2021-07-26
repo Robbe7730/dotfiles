@@ -237,3 +237,6 @@ PATH="$HOME/.cargo/bin:$PATH"
 # Redpencil mu-cli
 PATH="/home/robbe/Documents/redpencil.io/mu-cli/:$PATH"
 source /home/robbe/Documents/redpencil.io/mu-cli/completions
+
+# go binaries
+PATH="$HOME/go/bin:$PATH"
