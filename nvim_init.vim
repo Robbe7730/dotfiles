@@ -127,9 +127,11 @@ let g:coc_global_extensions = [
             \ 'coc-vimtex',
             \ 'coc-python',
             \ 'coc-omnisharp',
+            \ 'coc-docthis',
 \]
 
 nnoremap <A-CR> :CocAction<CR>
+nnoremap <leader>dt :CocCommand docthis.documentThis<CR>
 
 " ----- Parts of coc example configuration -----
 
