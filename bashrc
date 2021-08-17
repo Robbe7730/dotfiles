@@ -240,3 +240,6 @@ source /home/robbe/Documents/redpencil.io/mu-cli/completions
 
 # go binaries
 PATH="$HOME/go/bin:$PATH"
+
+# doom emacs
+PATH="$HOME/.emacs.d/bin:$PATH"
