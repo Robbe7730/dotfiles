@@ -57,3 +57,7 @@
            :repo "madnificent/ember-mode"
            )
 )
+
+(package! dockerfile-mode)
+(package! docker-compose-mode)
+(package! deft)

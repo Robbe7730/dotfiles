@@ -59,4 +59,33 @@
 
 (setq org-agenda-files (list "~/.org"))
 
-(setq org-agenda-span week)
+(setq org-agenda-span 'week)
+
+(setq org-roam-directory (file-truename "~/.org/roam"))
+(setq org-roam-dailies-directory "journals/")
+(setq org-roam-capture-templates
+   '(
+        ("d" "default" plain "%?"
+         :target (file+head "pages/${slug}.org" "#+TITLE: ${title}\n#+FILETAGS: :Notes:")
+         :unnarrowed t)
+    ))
+
+(org-roam-db-autosync-mode)
+
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "STRT(s)" "WAIT(w)" "|" "HOLD(h)" "DONE(d)" "KILL(k)"))
+)
+
+(setq org-comment-string "ARCHIVE")
+
+(setq org-agenda-prefix-format '(
+        (agenda . " %i %-12:c%?-12t% s")
+        (timeline . "  % s")
+        (todo . " %i %-12:c%l")
+        (tags . " %i %-12:c")
+        (search . " %i %-12:c")
+))
+
+(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
+
+(setq lsp-rust-server 'rust-analyzer)
