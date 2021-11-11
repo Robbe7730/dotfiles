@@ -243,3 +243,6 @@ PATH="$HOME/go/bin:$PATH"
 
 # doom emacs
 PATH="$HOME/.emacs.d/bin:$PATH"
+
+#nvm
+source /usr/share/nvm/init-nvm.sh
