@@ -14,7 +14,7 @@ def debug(text):
 
 config = configparser.ConfigParser()
 
-config.read("/home/robbe/.i3/secrets.ini")
+config.read("/home/robbe/.files/secrets.ini")
 
 # user = {
 #         "name": "TEST",

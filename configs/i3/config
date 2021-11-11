@@ -231,30 +231,29 @@ bindsym $mod+Shift+Mod2+KP_Insert move container to workspace 20
 bindsym $mod+m bar mode toggle
 
 # Password management
-bindsym $mod+Shift+z exec PASSWORD_STORE_DIR=/home/robbe/.zeus-wachtwoord-winkel passmenu
 bindsym $mod+Shift+f exec passmenu
 
 # Copypasta
-bindsym $mod+Shift+p exec /home/robbe/.files/i3/scripts/copypasta
+bindsym $mod+Shift+p exec /home/robbe/.files/scripts/copypasta
 
 # I need
-bindsym $mod+Shift+x exec /home/robbe/.files/i3/scripts/rswx
+bindsym $mod+Shift+x exec /home/robbe/.files/scripts/rswx
 
 # sticky mode
 bindsym $mod+Shift+s sticky toggle
 
 # emoji dmenu
-bindsym $mod+Shift+b exec /home/robbe/.files/i3/scripts/emojiHelper
+bindsym $mod+Shift+b exec /home/robbe/.files/scripts/emojiHelper
 
 # (u)mount dmenu
-bindsym $mod+Shift+m exec /home/robbe/.files/i3/scripts/mountHelper
-bindsym $mod+Shift+u exec /home/robbe/.files/i3/scripts/umountHelper
+bindsym $mod+Shift+m exec /home/robbe/.files/scripts/mountHelper
+bindsym $mod+Shift+u exec /home/robbe/.files/scripts/umountHelper
 
 # workspaces dmenu
-bindsym $mod+Shift+a exec /home/robbe/.files/i3/scripts/workspaces
+bindsym $mod+Shift+a exec /home/robbe/.files/scripts/workspaces
 
 # favourites dmenu
-bindsym $mod+Shift+d exec cat ~/.i3/favourites | dmenu | bash - &
+bindsym $mod+Shift+d exec cat ~/.files/configs/scripts/favourites | dmenu | bash - &
 
 # background image
 exec --no-startup-id feh --bg-scale /home/robbe/Pictures/background.jpg
@@ -269,61 +268,61 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # volume management
-bindsym XF86AudioRaiseVolume exec /home/robbe/.files/i3/scripts/volumeUp
-bindsym XF86AudioLowerVolume exec /home/robbe/.files/i3/scripts/volumeDown
-bindsym XF86AudioMute exec /home/robbe/.files/i3/scripts/volumeMute
+bindsym XF86AudioRaiseVolume exec /home/robbe/.files/scripts/volumeUp
+bindsym XF86AudioLowerVolume exec /home/robbe/.files/scripts/volumeDown
+bindsym XF86AudioMute exec /home/robbe/.files/scripts/volumeMute
 
 # brightness management
-bindsym XF86MonBrightnessUp exec /home/robbe/.files/i3/scripts/brightnessUp
-bindsym XF86MonBrightnessDown exec /home/robbe/.files/i3/scripts/brightnessDown
+bindsym XF86MonBrightnessUp exec /home/robbe/.files/scripts/brightnessUp
+bindsym XF86MonBrightnessDown exec /home/robbe/.files/scripts/brightnessDown
 
 # soundboard mode ;)
 bindsym $mod+o mode "Soundboard"
 mode "Soundboard" {
-	bindsym a exec paplay /home/robbe/.files/i3/sounds/shutdown.ogg
-	bindsym z exec paplay /home/robbe/.files/i3/sounds/momsspaghetti.ogg
-	bindsym e exec paplay /home/robbe/.files/i3/sounds/manamejeff.ogg
-	bindsym r exec paplay /home/robbe/.files/i3/sounds/airhorn.ogg
-	bindsym t exec paplay /home/robbe/.files/i3/sounds/xfiles.ogg
-	bindsym y exec paplay /home/robbe/.files/i3/sounds/doot.ogg
-	bindsym u exec paplay /home/robbe/.files/i3/sounds/bing.ogg
-	bindsym i exec paplay /home/robbe/.files/i3/sounds/bong.ogg
-	bindsym o exec /home/robbe/.files/i3/scripts/memebigboy
-	bindsym p exec paplay /home/robbe/.files/i3/sounds/wauw.ogg
+	bindsym a exec paplay /home/robbe/.files/sounds/shutdown.ogg
+	bindsym z exec paplay /home/robbe/.files/sounds/momsspaghetti.ogg
+	bindsym e exec paplay /home/robbe/.files/sounds/manamejeff.ogg
+	bindsym r exec paplay /home/robbe/.files/sounds/airhorn.ogg
+	bindsym t exec paplay /home/robbe/.files/sounds/xfiles.ogg
+	bindsym y exec paplay /home/robbe/.files/sounds/doot.ogg
+	bindsym u exec paplay /home/robbe/.files/sounds/bing.ogg
+	bindsym i exec paplay /home/robbe/.files/sounds/bong.ogg
+	bindsym o exec /home/robbe/.files/scripts/memebigboy
+	bindsym p exec paplay /home/robbe/.files/sounds/wauw.ogg
 	bindsym twosuperior exec killall paplay
 
-	bindsym q exec paplay /home/robbe/.files/i3/sounds/thethinggoes.ogg
-	bindsym s exec paplay /home/robbe/.files/i3/sounds/skrraa.ogg
-	bindsym d exec paplay /home/robbe/.files/i3/sounds/sadviolin.ogg
-	bindsym f exec paplay /home/robbe/.files/i3/sounds/congratulations.ogg
-	bindsym g exec paplay /home/robbe/.files/i3/sounds/curbyour.ogg
-	bindsym h exec paplay /home/robbe/.files/i3/sounds/itsfreerealestate.ogg
-	bindsym j exec paplay /home/robbe/.files/i3/sounds/reeee.ogg
-	bindsym k exec paplay /home/robbe/.files/i3/sounds/alert.ogg
-	bindsym l exec paplay /home/robbe/.files/i3/sounds/bass.ogg
-	bindsym m exec paplay /home/robbe/.files/i3/sounds/vsaucemusic.ogg
+	bindsym q exec paplay /home/robbe/.files/sounds/thethinggoes.ogg
+	bindsym s exec paplay /home/robbe/.files/sounds/skrraa.ogg
+	bindsym d exec paplay /home/robbe/.files/sounds/sadviolin.ogg
+	bindsym f exec paplay /home/robbe/.files/sounds/congratulations.ogg
+	bindsym g exec paplay /home/robbe/.files/sounds/curbyour.ogg
+	bindsym h exec paplay /home/robbe/.files/sounds/itsfreerealestate.ogg
+	bindsym j exec paplay /home/robbe/.files/sounds/reeee.ogg
+	bindsym k exec paplay /home/robbe/.files/sounds/alert.ogg
+	bindsym l exec paplay /home/robbe/.files/sounds/bass.ogg
+	bindsym m exec paplay /home/robbe/.files/sounds/vsaucemusic.ogg
 
-	bindsym w exec paplay /home/robbe/.files/i3/sounds/heythatsprettygood.ogg
-	bindsym x exec paplay /home/robbe/.files/i3/sounds/ihavecripplingdepression.ogg
-	bindsym c exec paplay /home/robbe/.files/i3/sounds/ihaveosteoporosis.ogg
-	bindsym v exec paplay /home/robbe/.files/i3/sounds/imgay.ogg
-	bindsym b exec paplay /home/robbe/.files/i3/sounds/itstimetostop.ogg
-	bindsym n exec paplay /home/robbe/.files/i3/sounds/heyvsaucemichaelhere.ogg
+	bindsym w exec paplay /home/robbe/.files/sounds/heythatsprettygood.ogg
+	bindsym x exec paplay /home/robbe/.files/sounds/ihavecripplingdepression.ogg
+	bindsym c exec paplay /home/robbe/.files/sounds/ihaveosteoporosis.ogg
+	bindsym v exec paplay /home/robbe/.files/sounds/imgay.ogg
+	bindsym b exec paplay /home/robbe/.files/sounds/itstimetostop.ogg
+	bindsym n exec paplay /home/robbe/.files/sounds/heyvsaucemichaelhere.ogg
 
-	bindsym comma exec paplay /home/robbe/.files/i3/sounds/oooooooooooooo.ogg
-	bindsym semicolon exec paplay /home/robbe/.files/i3/sounds/theyaskyouhowyouare.ogg
-	bindsym colon exec paplay /home/robbe/.files/i3/sounds/thuglife.ogg
-	bindsym equal exec paplay /home/robbe/.files/i3/sounds/wegotem.ogg
-	bindsym ugrave exec paplay /home/robbe/.files/i3/sounds/evilmorty.ogg
-	bindsym mu exec paplay /home/robbe/.files/i3/sounds/hmmmwhatyousay.ogg
-	bindsym dead_circumflex exec paplay /home/robbe/.files/i3/sounds/whyarewestillhere.ogg
-	bindsym dollar exec paplay /home/robbe/.files/i3/sounds/fbiopenup.ogg
-	bindsym less exec paplay /home/robbe/.files/i3/sounds/crabrave.ogg
+	bindsym comma exec paplay /home/robbe/.files/sounds/oooooooooooooo.ogg
+	bindsym semicolon exec paplay /home/robbe/.files/sounds/theyaskyouhowyouare.ogg
+	bindsym colon exec paplay /home/robbe/.files/sounds/thuglife.ogg
+	bindsym equal exec paplay /home/robbe/.files/sounds/wegotem.ogg
+	bindsym ugrave exec paplay /home/robbe/.files/sounds/evilmorty.ogg
+	bindsym mu exec paplay /home/robbe/.files/sounds/hmmmwhatyousay.ogg
+	bindsym dead_circumflex exec paplay /home/robbe/.files/sounds/whyarewestillhere.ogg
+	bindsym dollar exec paplay /home/robbe/.files/sounds/fbiopenup.ogg
+	bindsym less exec paplay /home/robbe/.files/sounds/crabrave.ogg
 
-	bindsym ampersand exec paplay /home/robbe/.files/i3/sounds/wasowasowasowassuuup.ogg
-	bindsym eacute exec paplay /home/robbe/.files/i3/sounds/bitconeeeeect.ogg
-	bindsym quotedbl exec paplay /home/robbe/.files/i3/sounds/turtleaaah.ogg
-	bindsym apostrophe exec paplay /home/robbe/.files/i3/sounds/hetkanmegeenklotenschelen.ogg
+	bindsym ampersand exec paplay /home/robbe/.files/sounds/wasowasowasowassuuup.ogg
+	bindsym eacute exec paplay /home/robbe/.files/sounds/bitconeeeeect.ogg
+	bindsym quotedbl exec paplay /home/robbe/.files/sounds/turtleaaah.ogg
+	bindsym apostrophe exec paplay /home/robbe/.files/sounds/hetkanmegeenklotenschelen.ogg
 
 	bindsym Escape mode "default"
 }

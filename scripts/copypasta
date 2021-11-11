@@ -1,5 +1,5 @@
 #!/bin/bash
 
-selection="`ls -1 $HOME/.i3/copypasta | dmenu`"
+selection="`ls -1 $HOME/.files/copypasta | dmenu`"
 
-cat "$HOME/.i3/copypasta/$selection" | xclip -selection clipboard
+cat "$HOME/.files/copypasta/$selection" | xclip -selection clipboard

@@ -1,9 +1,9 @@
 #!/bin/bash
 
 function printDing() {
-    numLines=`wc -l ~/.i3/dingen | sed 's/^\([0-9]*\) .*$/\1/'`
+    numLines=`wc -l ~/.files/configs/scripts/dingen | sed 's/^\([0-9]*\) .*$/\1/'`
     lineNum=`echo $RANDOM % $numLines + 1 | bc`
-    line=`tail -n+$lineNum ~/.i3/dingen | head -n 1`
+    line=`tail -n+$lineNum ~/.files/configs/scripts/dingen | head -n 1`
     echo $line is een ding
 }
 
@@ -14,14 +14,14 @@ else
   getopts ":a:lp" flag;
   case $flag in 
     a)
-      echo $OPTARG >> ~/.i3/dingen
-      pushd ~/.i3
+      echo $OPTARG >> ~/.files/configs/scripts/dingen
+      pushd ~/.files
       git add dingen
       git commit -m "$OPTARG is een ding"
       popd
       ;;
     l)
-      cat ~/.i3/dingen
+      cat ~/.files/configs/scripts/dingen
       ;;
     p)
       printDing

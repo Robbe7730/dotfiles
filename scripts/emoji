@@ -5,7 +5,7 @@ from optparse import OptionParser
 
 EMOJI_CODES = {}
 
-with open("/home/robbe/.i3/scripts/Values.txt", "r") as f:
+with open("/home/robbe/.files/configs/scripts/Values.txt", "r") as f:
     for line in f.readlines():
         uc, desc = line.strip().split(",")
         EMOJI_CODES[desc.lower()] = uc

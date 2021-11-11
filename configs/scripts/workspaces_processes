@@ -1,2 +1,1 @@
-code;code {}
-gnome-terminal;gnome-terminal --working-directory="{}"
+UNUSED;echo

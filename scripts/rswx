@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rswx_text="`/home/robbe/.files/i3/scripts/rswx_helper`"
+rswx_text="`/home/robbe/.files/scripts/rswx_helper`"
 
 selection=`echo "$rswx_text" | cut -d \; -f 1 | grep -v "^$" | dmenu`
 [ "$selection" = "" ] && exit 0
