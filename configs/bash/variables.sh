@@ -10,7 +10,7 @@ HISTSIZE=100000
 ## ?
 export PATH=$HOME/.local/bin:$PATH
 ## Ruby-related
-export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
+export PATH=$HOME/.gem/ruby/3.0.0/bin:$PATH
 export PATH=$HOME/.rbenv/bin:$PATH
 ## Rust/cargo installations
 export PATH=$HOME/.cargo/bin:$PATH
