@@ -1,5 +1,5 @@
 " Ignore case in searches and commands
-set ignorecase
+set smartcase
 
 " Enable Mouse support in all modes
 set mouse=a
