@@ -53,7 +53,7 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(load! "+secrets")
+;; (load! "+secrets")
 
 (setq org-log-done t)
 
@@ -89,3 +89,8 @@
 (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
 
 (setq lsp-rust-server 'rust-analyzer)
+
+(let ((org-super-agenda-group-property-name "Category")
+      (org-super-agenda-groups
+       '((:auto-group t))))
+  (org-agenda-list))

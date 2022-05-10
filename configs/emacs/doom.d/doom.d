@@ -1,1 +1,0 @@
-/home/robbe/.files/configs/emacs/doom.d

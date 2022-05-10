@@ -61,3 +61,5 @@
 (package! dockerfile-mode)
 (package! docker-compose-mode)
 (package! deft)
+(package! org-super-agenda)
+(package! glsl-mode)
