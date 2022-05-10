@@ -67,9 +67,9 @@ for ((i = 0; i < ${#INSTALL_NAMES[*]}; i++)); do
 
 
     if [ "$VERBOSE" == "y" ]; then
-        ln -svf "$CONFIG_BASE/$src" "$dest"
+        ln -svfT "$CONFIG_BASE/$src" "$dest"
     else
-        ln -sf "$CONFIG_BASE/$src" "$dest"
+        ln -sfT "$CONFIG_BASE/$src" "$dest"
     fi
 
     verbose_echo
