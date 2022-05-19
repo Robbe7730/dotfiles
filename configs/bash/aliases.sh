@@ -47,9 +47,11 @@ alias addvirtualcamera="sudo modprobe v4l2loopback devices=1 video_nr=1 card_lab
 alias addmicloopback="pactl load-module module-loopback latency_msec=1"
 
 # Radio listening
-alias stubru="mpv https://live-radio.lwc.vrtcdn.be/groupc/live/f404f0f3-3917-40fd-80b6-a152761072fe/live.isml/.m3u8"
-alias tijdloze="mpv https://live-radio.lwc.vrtcdn.be/groupc/live/582109ca-1e71-4330-93fc-e9affee94d7d/live.isml/.m3u8"
+alias stubru="mpv http://icecast.vrtcdn.be/stubru-high.mp3"
+alias tijdloze="mpv http://icecast.vrtcdn.be/stubru_tijdloze-high.mp3"
 alias willy="mpv https://playerservices.streamtheworld.com/api/livestream-redirect/WILLY.mp3"
+alias vuurland="mpv http://icecast.vrtcdn.be/stubru_tgs-high.mp3"
+alias untz="mpv http://icecast.vrtcdn.be/stubru_untz-high.mp3"
 
 # Automatically use wlo1 interface
 alias wpa_cli="wpa_cli -i wlo1"
