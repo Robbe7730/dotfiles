@@ -94,3 +94,6 @@
       (org-super-agenda-groups
        '((:auto-group t))))
   (org-agenda-list))
+
+(after! evil-escape
+  (setq evil-escape-key-sequence "fd"))
