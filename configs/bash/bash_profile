@@ -6,6 +6,9 @@ source $HOME/.files/configs/bash/variables.sh
 source $HOME/.files/configs/bash/aliases.sh
 source $HOME/.files/configs/bash/functions.sh
 
+# Set timezone
+curl -s https://ipapi.co/timezone | xargs sudo timedatectl set-timezone
+
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
     exec startx
 fi
