@@ -21,13 +21,13 @@ function addnvimmodule() {
 
 	# Add plugin to init.vim
 	sed -i "/\"NEW_PLUG/i \
-Plug '$1'" $HOME/.files/nvim_init.vim
+Plug '$1'" $HOME/.files/configs/nvim/init.vim
 
 	# Add plugin to nvim_modules.md
-	echo "$1: " >>$HOME/.files/nvim_plugins.md
+	echo "$1: " >>$HOME/.files/configs/nvim/nvim_plugins.md
 
 	# Install plugin and show files for further configuration
-	nvim +PlugInstall $HOME/.files/nvim_init.vim $HOME/.files/nvim_plugins.md
+	nvim +PlugInstall $HOME/.files/configs/nvim/init.vim $HOME/.files/configs/nvim/nvim_plugins.md
 }
 
 # run a Flask app
