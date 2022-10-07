@@ -10,3 +10,4 @@ niklasl/vim-rdf: RDF syntax highlighting
 whonore/Coqtail: Coq support
 neoclide/coc.nvim: Completion
 junegunn/vim-easy-align: Align columns
+prettier/vim-prettier: Prettier (~> ALE?)

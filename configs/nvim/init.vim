@@ -59,6 +59,7 @@ Plug 'niklasl/vim-rdf'
 Plug 'whonore/Coqtail'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/vim-easy-align'
+Plug 'prettier/vim-prettier'
 "NEW_PLUG (add new Plug lines above this line)
 
 call plug#end()
