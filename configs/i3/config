@@ -171,6 +171,9 @@ bar {
 
 ####### USER DEFINED #######
 
+# Network helper
+bindsym $mod+Shift+n exec networkHelper
+
 # Maximum fan speed
 bindsym $mod+F7 exec sudo dell-bios-fan-control 0 && i8kfan 3 3
 bindsym --release $mod+F7 exec i8kfan 0 0 && sudo dell-bios-fan-control 1
