@@ -1,0 +1,14 @@
+#!/bin/bash
+
+ALL_NETWORKS="ALL"
+INTERFACE="wlo1"
+
+selected_network="`wpa_cli -i $INTERFACE list_networks | sed "s@network id / ssid / bssid / flags@$ALL_NETWORKS@" | cut -f 2 | dmenu -i`"
+
+if [ "$selected_network" == "$ALL_NETWORKS" ]; then
+    network_id="all"
+else
+    network_id="`wpa_cli -i $INTERFACE list_networks | grep -w "$selected_network" | head -n 1 | cut -f 1`"
+fi
+
+wpa_cli select_network $network_id
