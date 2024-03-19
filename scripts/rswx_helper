@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-const https = require("http");
+const https = require("https");
 const Parser = require('html-dom-parser');
 const builder = require("terminal-menu-program"),
       program = new builder.Program("Radio Soulwax")
 
-const url = "http://2manydjs.com/index-radiosoulwax.html"
+const url = "https://2manydjs.com/index-radiosoulwax.html"
 
 https.get(url, res => {
   res.setEncoding("utf8");
