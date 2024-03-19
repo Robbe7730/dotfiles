@@ -23,7 +23,7 @@ filetype plugin indent on
 syntax on
 
 " Set textwidth to 80
-set tw=80
+" set tw=80
 
 " Set fancy colors
 set termguicolors
@@ -60,6 +60,7 @@ Plug 'whonore/Coqtail'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/vim-easy-align'
 Plug 'prettier/vim-prettier'
+Plug 'ziglang/zig.vim'
 "NEW_PLUG (add new Plug lines above this line)
 
 call plug#end()
@@ -122,13 +123,14 @@ let g:vimtex_compiler_latexmk = {
 
 let g:coc_global_extensions = [
             \ 'coc-json',
-            \ 'coc-rls',
+            \ 'coc-rust-analyzer',
             \ 'coc-tsserver',
             \ 'coc-eslint',
             \ 'coc-vimtex',
             \ 'coc-python',
             \ 'coc-omnisharp',
             \ 'coc-docthis',
+            \ 'coc-zig',
 \]
 
 nnoremap <A-CR> :CocAction<CR>
@@ -143,16 +145,16 @@ set updatetime=300
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
-" Use tab for trigger completion with characters ahead and navigate.
+" No clue why, but this seems to be needed
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ CheckBackspace() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>
 
-function! s:check_back_space() abort
+function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
@@ -242,3 +244,8 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+"---- ziglang/zig.vim ----
+" The zig formatter often sucks
+let g:zig_fmt_autosave = 0
+
