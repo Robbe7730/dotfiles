@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+pactl load-module module-null-sink sink_name=rtp sink_properties=device.description=Korner
+pactl load-module module-rtp-send source=rtp.monitor
+sshpass -pkorner ssh korner@korner "systemctl --user restart pipewire-pulse"
