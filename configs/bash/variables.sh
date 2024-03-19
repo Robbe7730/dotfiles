@@ -49,3 +49,9 @@ export PATH=$DEVKITPRO/tools/bin:$PATH
 # For CUDA
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/cuda/lib64"
 export CUDA_HOME=/opt/cuda/
+
+# For jadx-gui
+# export JADX_GUI_OPTS="-Dsun.java2d.uiScale=2"
+
+# For Hledger
+export LEDGER_FILE=~/.hledger/main.journal

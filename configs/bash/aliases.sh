@@ -54,7 +54,7 @@ alias vuurland="mpv http://icecast.vrtcdn.be/stubru_tgs-high.mp3"
 alias untz="mpv http://icecast.vrtcdn.be/stubru_untz-high.mp3"
 
 # Automatically use wlo1 interface
-alias wpa_cli="wpa_cli -i wlo1"
+alias wpa_cli="wpa_cli -i wlp0s20f3"
 
 # Bluetooth
 alias bluetoothon="echo power on | bluetoothctl"
@@ -63,3 +63,12 @@ alias connectheadphones="echo connect D0:8A:55:33:74:F6 | bluetoothctl"
 
 # Why use vim?
 alias vim="nvim"
+
+# hledger
+alias hbs="hledger bs -US --date2 --market --depth 3 --tree --value=then -X € --infer-market-prices"
+alias his="hledger is -US --date2 --market --depth 2 --tree --value=then -X € --infer-market-prices --period thismonth"
+
+alias hbso="hledger bs -MUS --date2 --market --depth 3 --tree --value=then -X € --infer-market-prices"
+alias hiso="hledger is -MUS --date2 --market --depth 2 --tree --value=then -X € --infer-market-prices"
+
+alias hiadd="hledger iadd"

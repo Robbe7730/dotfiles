@@ -25,10 +25,3 @@ ding
 
 # Remind me to BETAAL MIJN FUCKING SCHULDEN
 # tabBalance -s 1.6
-
-
-# Redpencil mu-cli
-source $HOME/Documents/redpencil.io/mu-cli/completions
-
-# nvm
-source /usr/share/nvm/init-nvm.sh
