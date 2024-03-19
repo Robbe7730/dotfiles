@@ -1,4 +1,4 @@
 #!/bin/bash
 
-sudo brightnessctl s 1 
+brightnessctl s 1 
 # killall -USR1 myStatus
