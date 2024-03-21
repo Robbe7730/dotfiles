@@ -65,6 +65,12 @@ for ((i = 0; i < ${#INSTALL_NAMES[*]}; i++)); do
         continue
     fi
 
+    if [ "$VERBOSE" == "y" ]; then
+        mkdir -vp `dirname $dest`
+    else
+        mkdir -p `dirname $dest`
+    fi
+
 
     if [ "$VERBOSE" == "y" ]; then
         ln -svfT "$CONFIG_BASE/$src" "$dest"
