@@ -1,0 +1,69 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# --- OH MY ZSH ---
+
+export ZSH="$HOME/.oh-my-zsh"
+
+CASE_SENSITIVE="false"
+HYPHEN_INSENSITIVE="true"
+DISABLE_AUTO_TITLE="false"
+ENABLE_CORRECTION="true"
+# COMPLETION_WAITING_DOTS="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+HIST_STAMPS="mm/dd/yyyy"
+
+# ssh-agent
+zstyle :omz:plugins:ssh-agent agent-forwarding yes
+zstyle :omz:plugins:ssh-agent quiet yes
+
+plugins=(
+	git
+        zsh-autosuggestions
+        zsh-syntax-highlighting
+        sudo
+        ssh-agent
+        httpie
+        command-not-found
+        watson
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# --- Other ---
+
+source ~/.files/configs/bash/variables.sh
+source ~/.files/configs/bash/aliases.sh
+source ~/.files/configs/bash/functions.sh
+
+# Check if the system needs to be updated (current: 5 days)
+update -b 432000
+
+# Tell git about my gpg key
+export GPG_TTY=$(tty)
+
+eval "$(rbenv init -)"
+
+# Remind me of all the things that exist
+# ding
+
+# Remind me to BETAAL MIJN FUCKING SCHULDEN
+# tabBalance -s 1.6
+
+autoload -Uz promptinit compinit
+compinit
+promptinit
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+PATH="/home/robbe/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/robbe/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/robbe/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/robbe/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/robbe/perl5"; export PERL_MM_OPT;

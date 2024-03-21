@@ -11,3 +11,4 @@ xorg	xorg/xinitrc	~/.xinitrc
 ranger	ranger/rc.conf	~/.config/ranger/rc.conf
 ranger	ranger/scope.sh	~/.config/ranger/scope.sh
 awesome	awesome	~/.config/awesome
+zsh	zsh/zshrc	~/.zshrc
