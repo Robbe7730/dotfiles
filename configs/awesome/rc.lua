@@ -713,6 +713,7 @@ awful.rules.rules = {
           "AlarmWindow",  -- Thunderbird's calendar.
           "ConfigManager",  -- Thunderbird's about:config.
           "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
+          "alert",          -- Firefox notifications
         }
       }, properties = { floating = true }},
 
