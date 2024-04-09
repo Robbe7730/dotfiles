@@ -713,7 +713,6 @@ awful.rules.rules = {
           "AlarmWindow",  -- Thunderbird's calendar.
           "ConfigManager",  -- Thunderbird's about:config.
           "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
-          "alert",          -- Firefox notifications
         }
       }, properties = { floating = true }},
 
@@ -722,12 +721,9 @@ awful.rules.rules = {
       }, properties = { titlebars_enabled = true }
     },
 
-     { rule_any = {
-          class = { "Steam" },
-      },
-      properties = {
-        titlebars_enabled = false,
-      }
+    { rule_any = {
+      class = { "Steam" },
+      }, properties = { titlebars_enabled = false }
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
@@ -736,6 +732,12 @@ awful.rules.rules = {
 
     { rule = { instance = "florence" },
         properties = { focusable = false, floating = true } },
+
+    -- Firefox notifications
+    { rule_any = {
+      class = { "alert" },
+      }, properties = { focusable = false, floating = true, titlebars_enabled = false }
+    },
 }
 
 -- }}}
