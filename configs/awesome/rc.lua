@@ -735,8 +735,16 @@ awful.rules.rules = {
 
     -- Firefox notifications
     { rule_any = {
-      class = { "alert" },
-      }, properties = { focusable = false, floating = true, titlebars_enabled = false }
+      role = {"alert"},
+      class = { "alert", "Alert" },
+      }, properties = {
+          focusable = false,
+          floating = true,
+          titlebars_enabled = false,
+          placement = awful.placement.top_right,
+          border_width = 0,
+          above = true,
+      }
     },
 }
 
