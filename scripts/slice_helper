@@ -1,0 +1,133 @@
+# $1 = message
+notify() {
+    if [[ $use_notifications == true ]]; then
+        notify-send "$1"
+    else
+        echo "$1"
+    fi
+}
+
+# $1 = slice
+assert_running() {
+    num_running=`sudo lxc-ls --running --filter "^$1$" -1 | wc -l`
+
+    if [ $num_running -eq 0 ]; then
+        notify "Slice $1 is not running, starting now..."
+        sudo lxc-start "$1"
+    fi
+}
+
+# $1 = slice
+stop_slice() {
+    num_running=`sudo lxc-ls --running --filter "^$1$" -1 | wc -l`
+
+    if [ $num_running -gt 0 ]; then
+        sudo lxc-stop "$1"
+    fi
+}
+
+select_slice() {
+    (
+    ( if [[ $show_active == true ]]; then
+        sudo lxc-ls -1 --filter '^([^b]|b[^a]|ba[^s]|bas[^e])' --active;
+    fi );
+    ( if [[ $show_stopped == true ]]; then
+        sudo lxc-ls -1 --filter '^([^b]|b[^a]|ba[^s]|bas[^e])' --stopped;
+    fi );
+    ) | dmenu -i -p "Select slice:"
+}
+
+start_terminal() {
+    assert_running "$selected_slice"
+    alacritty -e sudo lxc-attach -n "$selected_slice" --clear-env -- sudo -u robbe env DISPLAY=:0 bash
+}
+
+start_application() {
+    assert_running "$selected_slice"
+    sudo lxc-attach -n "$selected_slice" -- sudo -nu robbe env DISPLAY=:0 dmenu_run
+}
+
+start_browser() {
+    assert_running "$selected_slice"
+    sudo lxc-attach -n "$selected_slice" -- sudo -nu robbe env DISPLAY=:0 MOZ_USE_XINPUT2=1 firefox
+}
+
+show_help() {
+  echo "Usage: $0 [OPTIONS]"
+  echo
+  echo "Options:"
+  echo "  -h              Show this help message and exit."
+  echo "  -n              Use notifications instead of standard output."
+  echo "  -a <action>     Perform the provided action. Available actions are:"
+  echo "                  terminal, stop, application."
+  echo "  -s <slice>      Select a specific slice, if no slice is provided,"
+  echo "                  prompts the user to select one "
+  echo
+  exit 0
+}
+
+use_notifications=false
+action=""
+include_base=false
+selected_slice=""
+
+show_active=true
+show_stopped=true
+
+while getopts "hna:s:" opt; do
+  case $opt in
+    h)
+      show_help
+      exit
+      ;;
+    n)
+      use_notifications=true
+      ;;
+    a)
+      action=$OPTARG
+      ;;
+    s)
+      selected_slice=$OPTARG
+      ;;
+    *)
+      show_help
+      exit
+      ;;
+  esac
+done
+
+if [[ "$action" == "" ]]; then
+    echo "No action provided"
+    exit 1
+fi
+
+if [[ "$action" == "stop" ]]; then
+    show_stopped=false
+fi
+
+if [[ "$selected_slice" == "" ]]; then
+    selected_slice=$(select_slice)
+fi
+
+if [[ "$selected_slice" == "" ]]; then
+    exit 2
+fi
+
+case $action in
+    terminal)
+        start_terminal
+        ;;
+    stop)
+        stop_slice "$selected_slice"
+        ;;
+    application)
+        start_application
+        ;;
+    browser)
+        start_browser
+        ;;
+    *)
+        echo "Error: Invalid action '$action'"
+        exit 1
+    ;;
+esac
