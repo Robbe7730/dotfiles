@@ -1,7 +1,8 @@
 [user]
 	email = robbe@robbevanherck.be
 	name = Robbe Van Herck
-	signingKey = D188C6D6914950AC
+        # signingKey = D188C6D6914950AC
+        signingKey = B3D562B8BEC9FB7C
 
 [filter "lfs"]
 	process = git-lfs filter-process
@@ -13,7 +14,7 @@
 	rebase = true
 
 [commit]
-	#gpgsign = true
+        gpgsign = true
 
 [init]
 	defaultBranch = main
