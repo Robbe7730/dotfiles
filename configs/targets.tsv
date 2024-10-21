@@ -1,7 +1,7 @@
 emacs	emacs/doom.d	~/.doom.d
 nvim	nvim/nvim_plugins.md	~/.config/nvim/nvim_plugins.md
 nvim	nvim/init.vim	~/.config/nvim/init.vim
-alacritty	alacritty/alacritty.yml	~/.config/alacritty/alacritty.yml
+alacritty	alacritty/alacritty.toml	~/.config/alacritty/alacritty.toml
 dunst	dunst/dunstrc	~/.config/dunst/dunstrc
 i3	i3	~/.i3
 bash	bash/bashrc	~/.bashrc
