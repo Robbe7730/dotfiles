@@ -106,7 +106,7 @@ local terminal     = "alacritty"
 local vi_focus     = false -- vi-like client focus https://github.com/lcpz/awesome-copycats/issues/275
 local cycle_prev   = true  -- cycle with only the previously focused client or all https://github.com/lcpz/awesome-copycats/issues/274
 local editor       = os.getenv("EDITOR") or "nvim"
-local browser      = "firefox -p"
+local browser      = "slice_helper -a browser"
 local scrlocker    = "xlock"
 local printscrn    = "flameshot gui &"
 
@@ -399,8 +399,16 @@ globalkeys = mytable.join(
               {description = "delete tag", group = "tag"}),
 
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
+    awful.key({ modkey,           }, "Return", function () awful.spawn("slice_helper -a terminal") end,
               {description = "open a terminal", group = "launcher"}),
+    awful.key({ modkey, "Shift"   }, "Return", function () awful.spawn(terminal) end,
+              {description = "open a terminal", group = "launcher"}),
+    awful.key({ modkey, "Shift"   }, "s", function () awful.spawn("slice_helper -a stop") end,
+              {description = "stop a slice", group = "launcher"}),
+    awful.key({                   }, "#248", function () awful.spawn("alacritty -e htop") end,
+              {description = "open htop", group = "launcher"}),
+    awful.key({                   }, "#157", function () awful.spawn("pavucontrol") end,
+              {description = "open pavucontrol", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     --[[awful.key({ modkey, "Shift"   }, "q", awesome.quit,
@@ -520,8 +528,10 @@ globalkeys = mytable.join(
     --]]
     -- dmenu
     awful.key({ modkey }, "d", function ()
-            os.execute(string.format("dmenu_run -i -fn 'Monospace' -nb '%s' -nf '%s' -sb '%s' -sf '%s'",
-            beautiful.bg_normal, beautiful.fg_normal, beautiful.bg_focus, beautiful.fg_focus))
+         -- os.execute(string.format("dmenu_run -i -fn 'Monospace' -nb '%s' -nf '%s' -sb '%s' -sf '%s'",
+         --   beautiful.bg_normal, beautiful.fg_normal, beautiful.bg_focus, beautiful.fg_focus))
+        -- end,
+            os.execute("slice_helper -a application")
         end,
         {description = "show dmenu", group = "launcher"}),
     --
