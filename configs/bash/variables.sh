@@ -55,3 +55,9 @@ export CUDA_HOME=/opt/cuda/
 
 # For Hledger
 export LEDGER_FILE=~/.hledger/main.journal
+
+# Terminal config
+export TERM=xterm
+
+# SSH with yubikey
+export SSH_AUTH_SOCK=/tmp/ssh.socket
