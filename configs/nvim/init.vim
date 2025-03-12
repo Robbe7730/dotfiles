@@ -127,10 +127,11 @@ let g:coc_global_extensions = [
             \ 'coc-tsserver',
             \ 'coc-eslint',
             \ 'coc-vimtex',
-            \ 'coc-python',
+            \ 'coc-pyright',
             \ 'coc-omnisharp',
             \ 'coc-docthis',
             \ 'coc-zig',
+            \ 'coc-clangd',
 \]
 
 nnoremap <A-CR> :CocAction<CR>
