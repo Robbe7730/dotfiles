@@ -1,3 +1,11 @@
+# --- CONFIG ---
+
+USER="robbe"
+SHELL="/usr/bin/zsh"
+TERMINAL="alacritty -e"
+
+# --- CODE ---
+
 # $1 = message
 notify() {
     if [[ $use_notifications == true ]]; then
@@ -37,19 +45,30 @@ select_slice() {
     ) | dmenu -i -p "Select slice:"
 }
 
+# $1 = slice
+# $2 = command
+# $3 = true run in terminal
+run_in_slice() {
+    prefix=""
+    if [[ $3 == true ]]; then
+        prefix="$TERMINAL"
+    fi
+    $prefix sudo lxc-attach -n "$1" --clear-env -- machinectl -q shell "$USER@.host" /usr/bin/env DISPLAY=:0 TERM=xterm $SHELL -c "$2"
+}
+
 start_terminal() {
     assert_running "$selected_slice"
-    alacritty -e sudo lxc-attach -n "$selected_slice" --clear-env -- sudo -u robbe env DISPLAY=:0 bash
+    run_in_slice "$selected_slice" "$SHELL" "true"
 }
 
 start_application() {
     assert_running "$selected_slice"
-    sudo lxc-attach -n "$selected_slice" -- sudo -nu robbe env DISPLAY=:0 dmenu_run
+    run_in_slice "$selected_slice" "nohup dmenu_run >/dev/null 2>&1"
 }
 
 start_browser() {
     assert_running "$selected_slice"
-    sudo lxc-attach -n "$selected_slice" -- sudo -nu robbe env DISPLAY=:0 MOZ_USE_XINPUT2=1 firefox
+    run_in_slice "$selected_slice" "firefox"
 }
 
 show_help() {
@@ -59,7 +78,7 @@ show_help() {
   echo "  -h              Show this help message and exit."
   echo "  -n              Use notifications instead of standard output."
   echo "  -a <action>     Perform the provided action. Available actions are:"
-  echo "                  terminal, stop, application."
+  echo "                  terminal, stop, application, browser."
   echo "  -s <slice>      Select a specific slice, if no slice is provided,"
   echo "                  prompts the user to select one "
   echo
