@@ -3,7 +3,7 @@
 
 # --- OH MY ZSH ---
 
-export ZSH="/usr/share/oh-my-zsh"
+export ZSH="/home/robbe/.oh-my-zsh"
 
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="true"
@@ -26,6 +26,7 @@ plugins=(
         httpie
         command-not-found
         watson
+        autoswitch_virtualenv
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -53,7 +54,7 @@ export GPG_TTY=$(tty)
 autoload -Uz promptinit compinit
 compinit
 promptinit
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+source /home/robbe/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -67,9 +68,5 @@ PERL5LIB="/home/robbe/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB
 PERL_LOCAL_LIB_ROOT="/home/robbe/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/robbe/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/robbe/perl5"; export PERL_MM_OPT;
+export PATH=$PATH:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
 
-# for Yubikey SSH
-export GPG_TTY="$(tty)"
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
-gpg-connect-agent updatestartuptty /bye > /dev/null
