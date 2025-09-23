@@ -68,7 +68,7 @@ start_application() {
 
 start_browser() {
     assert_running "$selected_slice"
-    run_in_slice "$selected_slice" "firefox"
+    run_in_slice "$selected_slice" "MOZ_USE_XINPUT2=1 firefox"
 }
 
 show_help() {
