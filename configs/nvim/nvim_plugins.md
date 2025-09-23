@@ -12,3 +12,4 @@ neoclide/coc.nvim: Completion
 junegunn/vim-easy-align: Align columns
 prettier/vim-prettier: Prettier (~> ALE?)
 ziglang/zig.vim: Zig for vim (Recommended by coc-zig)
+liuchengxu/graphviz.vim: Graphviz dot support

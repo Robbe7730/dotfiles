@@ -61,6 +61,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/vim-easy-align'
 Plug 'prettier/vim-prettier'
 Plug 'ziglang/zig.vim'
+Plug 'liuchengxu/graphviz.vim'
 "NEW_PLUG (add new Plug lines above this line)
 
 call plug#end()
@@ -270,3 +271,6 @@ nmap ga <Plug>(EasyAlign)
 " The zig formatter often sucks
 let g:zig_fmt_autosave = 0
 
+"---- liuchengxu/graphviz.vim ----
+let g:graphviz_output_format = 'png'
+let g:graphviz_viewer = 'eog'
