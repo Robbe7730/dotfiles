@@ -3,7 +3,7 @@
 
 # --- OH MY ZSH ---
 
-export ZSH="/home/robbe/.oh-my-zsh"
+export ZSH="/usr/share/oh-my-zsh"
 
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="true"
@@ -54,7 +54,7 @@ export GPG_TTY=$(tty)
 autoload -Uz promptinit compinit
 compinit
 promptinit
-source /home/robbe/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
